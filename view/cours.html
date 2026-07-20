@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Courses | Language School</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/cours.css">
+
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/cours.js" defer></script>
+</head>
+
+<body>
+
+  <!--  HEADER  -->
+  <div id="header"></div>
+
+  <!--  HERO  -->
+  <section class="courses-hero">
+
+    <span class="subtitle">
+      <i class="fa-solid fa-graduation-cap"></i>
+      Online Courses
+    </span>
+
+    <h1>
+      Learn New Skills
+      <br>
+      Build Your Future
+    </h1>
+
+    <p>
+      Discover thousands of online courses taught by expert instructors.
+      Improve your language, technology, design and business skills.
+    </p>
+
+  
+
+
+  </section>
+
+  <!--  POPULAR COURSES  -->
+  <section class="courses-section">
+
+      <ul class="course-filter" id="courseFilter">
+        <li><button type="button" class="filter-chip active" data-filter="all">All</button></li>
+        <li><button type="button" class="filter-chip" data-filter="languages">Languages</button></li>
+        <li><button type="button" class="filter-chip" data-filter="programming">Programming</button></li>
+        <li><button type="button" class="filter-chip" data-filter="design">Design</button></li>
+        <li><button type="button" class="filter-chip" data-filter="business">Business</button></li>
+        <li><button type="button" class="filter-chip" data-filter="finance">Finance</button></li>
+        <li><button type="button" class="filter-chip" data-filter="marketing">Marketing</button></li>
+        <li><button type="button" class="filter-chip" data-filter="development">Development</button></li>
+        <li><button type="button" class="filter-chip" data-filter="cyber-security">Cyber Security</button></li>
+        <li><button type="button" class="filter-chip" data-filter="artificial-intelligence">Artificial Intelligence</button></li>
+        <li><button type="button" class="filter-chip" data-filter="data-science">Data Science</button></li>
+        <li><button type="button" class="filter-chip" data-filter="cloud">Cloud</button></li>
+      </ul>
+      
+    <div class="course-filter-wrap">
+      <button class="filter-arrow" id="filterPrev" type="button" aria-label="Scroll filters left">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+
+      <button class="filter-arrow" id="filterNext" type="button" aria-label="Scroll filters right">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <p class="no-courses" id="noCoursesFound">No courses match your search yet.</p>
+    <div class="section-title">
+      <span class="subtitle">
+        <i class="fa-solid fa-book-open"></i>
+        Popular Courses
+      </span>
+      <h2>Featured Courses</h2>
+      <p>Learn from professional teachers and industry experts.</p>
+    </div>
+
+    <div class="courses-grid">
+
+      <!--  COURSE 1  -->
+      <article class="course-card" data-category="languages">
+        <div class="course-image">
+          <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=900" alt="English Speaking Masterclass course">
+          <span class="course-category">Languages</span>
+        </div>
+
+        <div class="instructor">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Johnson">
+          <div>
+            <h4>Emily Johnson</h4>
+            <span>English Teacher</span>
+          </div>
+        </div>
+
+        <div class="course-content">
+          <h3>English Speaking Masterclass</h3>
+
+          <div class="rating">
+            ★★★★★
+            <span>4.9 (4520)</span>
+          </div>
+
+          <div class="course-info">
+            <span><i class="fa-regular fa-clock"></i> 20 Hours</span>
+            <span><i class="fa-solid fa-users"></i> 8500 Students</span>
+          </div>
+
+          <div class="price">
+            <del>129€</del>
+            <strong>69€</strong>
+          </div>
+
+          <div class="button">
+            <a href="detail-cour.html">Enroll Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!--  COURSE 2  -->
+      <article class="course-card" data-category="languages">
+        <div class="course-image">
+          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=900" alt="French Language Complete Course">
+          <span class="course-category">Languages</span>
+        </div>
+
+        <div class="instructor">
+          <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Daniel Wilson">
+          <div>
+            <h4>Daniel Wilson</h4>
+            <span>French Instructor</span>
+          </div>
+        </div>
+
+        <div class="course-content">
+          <h3>French Language Complete Course</h3>
+
+          <div class="rating">
+            ★★★★★
+            <span>4.8 (3280)</span>
+          </div>
+
+          <div class="course-info">
+            <span><i class="fa-regular fa-clock"></i> 35 Hours</span>
+            <span><i class="fa-solid fa-users"></i> 6200 Students</span>
+          </div>
+
+          <div class="price">
+            <del>159€</del>
+            <strong>79€</strong>
+          </div>
+
+          <div class="button">
+            <a href="detail-cour.html">Enroll Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!--  COURSE 3  -->
+      <article class="course-card" data-category="programming">
+        <div class="course-image">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=900" alt="Modern JavaScript Bootcamp">
+          <span class="course-category">Programming</span>
+        </div>
+
+        <div class="instructor">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Brown">
+          <div>
+            <h4>Michael Brown</h4>
+            <span>Software Developer</span>
+          </div>
+        </div>
+
+        <div class="course-content">
+          <h3>Modern JavaScript Bootcamp</h3>
+
+          <div class="rating">
+            ★★★★★
+            <span>4.9 (2340)</span>
+          </div>
+
+          <div class="course-info">
+            <span><i class="fa-regular fa-clock"></i> 22 Hours</span>
+            <span><i class="fa-solid fa-users"></i> 12400 Students</span>
+          </div>
+
+          <div class="price">
+            <del>149€</del>
+            <strong>89€</strong>
+          </div>
+
+          <div class="button">
+            <a href="detail-cour.html">Enroll Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!--  COURSE 4  -->
+      <article class="course-card" data-category="programming">
+        <div class="course-image">
+          <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=900" alt="Complete Python Programming">
+          <span class="course-category">Programming</span>
+        </div>
+
+        <div class="instructor">
+          <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sophia Miller">
+          <div>
+            <h4>Sophia Miller</h4>
+            <span>Python Instructor</span>
+          </div>
+        </div>
+
+        <div class="course-content">
+          <h3>Complete Python Programming</h3>
+
+          <div class="rating">
+            ★★★★★
+            <span>4.9 (5100)</span>
+          </div>
+
+          <div class="course-info">
+            <span><i class="fa-regular fa-clock"></i> 30 Hours</span>
+            <span><i class="fa-solid fa-users"></i> 15000 Students</span>
+          </div>
+
+          <div class="price">
+            <del>199€</del>
+            <strong>99€</strong>
+          </div>
+
+          <div class="button">
+            <a href="detail-cour.html">Enroll Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!--  COURSE 5  -->
+      <article class="course-card" data-category="development">
+        <div class="course-image">
+          <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=900" alt="React Professional Course">
+          <span class="course-category">Development</span>
+        </div>
+
+        <div class="instructor">
+          <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David Smith">
+          <div>
+            <h4>David Smith</h4>
+            <span>Full Stack Developer</span>
+          </div>
+        </div>
+
+        <div class="course-content">
+          <h3>React Professional Course</h3>
+
+          <div class="rating">
+            ★★★★★
+            <span>4.8 (2800)</span>
+          </div>
+
+          <div class="course-info">
+            <span><i class="fa-regular fa-clock"></i> 26 Hours</span>
+            <span><i class="fa-solid fa-users"></i> 9000 Students</span>
+          </div>
+
+          <div class="price">
+            <del>179€</del>
+            <strong>89€</strong>
+          </div>
+
+          <div class="button">
+            <a href="detail-cour.html">Enroll Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!--  COURSE 6  -->
+      <article class="course-card" data-category="development">
+        <div class="course-image">
+          <img src="https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=900" alt="HTML & CSS Complete Guide">
+          <span class="course-category">Development</span>
+        </div>
+
+        <div class="instructor">
+          <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Emma Davis">
+          <div>
+            <h4>Emma Davis</h4>
+            <span>Web Developer</span>
+          </div>
+        </div>
+
+        <div class="course-content">
+          <h3>HTML & CSS Complete Guide</h3>
+
+          <div class="rating">
+            ★★★★★
+            <span>4.7 (3900)</span>
+          </div>
+
+          <div class="course-info">
+            <span><i class="fa-regular fa-clock"></i> 18 Hours</span>
+            <span><i class="fa-solid fa-users"></i> 11000 Students</span>
+          </div>
+
+          <div class="price">
+            <del>99€</del>
+            <strong>49€</strong>
+          </div>
+
+          <div class="button">
+            <a href="detail-cour.html">Enroll Now</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!--  DESIGN COURSES  -->
+  <section class="courses-section">
+
+    <div class="section-title">
+      <span class="subtitle">
+        <i class="fa-solid fa-palette"></i>
+        Design Courses
+      </span>
+      <h2>Creative Design Programs</h2>
+      <p>Master modern design tools and create professional projects.</p>
+    </div>
+
+    <div class="courses-grid">
+
+      <!-- DESIGN CARD 1 -->
+      <article class="course-card" data-category="design">
+        <div class="course-image">
+          <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=900" alt="UI/UX Design Masterclass">
+          <span class="course-category">Design</span>
+        </div>
+
+        <div class="instructor">
+          <img src="https://randomuser.me/api/portraits/women/40.jpg" alt="Olivia Taylor">
+          <div>
+            <h4>Olivia Taylor</h4>
+            <span>UI/UX Designer</span>
+          </div>
+        </div>
+
+        <div class="course-content">
+          <h3>UI/UX Design Masterclass</h3>
+
+          <div class="rating">
+            ★★★★★
+            <span>4.9 (6400)</span>
+          </div>
+
+          <div class="course-info">
+            <span><i class="fa-regular fa-clock"></i> 24 Hours</span>
+            <span><i class="fa-solid fa-users"></i> 15000 Students</span>
+          </div>
+
+          <div class="price">
+            <del>199€</del>
+            <strong>99€</strong>
+          </div>
+
+          <div class="button">
+            <a href="detail-cour.html">Enroll Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- DESIGN CARD 2 -->
+      <article class="course-card" data-category="design">
+        <div class="course-image">
+          <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900" alt="Figma From Beginner To Advanced">
+          <span class="course-category">Design</span>
+        </div>
+
+        <div class="instructor">
+          <img src="https://randomuser.me/api/portraits/men/20.jpg" alt="James Anderson">
+          <div>
+            <h4>James Anderson</h4>
+            <span>Figma Expert</span>
+          </div>
+        </div>
+
+        <div class="course-content">
+          <h3>Figma From Beginner To Advanced</h3>
+
+          <div class="rating">
+            ★★★★★
+            <span>4.8 (4300)</span>
+          </div>
+
+          <div class="course-info">
+            <span><i class="fa-regular fa-clock"></i> 16 Hours</span>
+            <span><i class="fa-solid fa-users"></i> 8200 Students</span>
+          </div>
+
+          <div class="price">
+            <del>120€</del>
+            <strong>59€</strong>
+          </div>
+
+          <div class="button">
+            <a href="detail-cour.html">Enroll Now</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!--  BUSINESS COURSES  -->
+  <section class="courses-section">
+
+    <div class="section-title">
+      <span class="subtitle">
+        <i class="fa-solid fa-chart-line"></i>
+        Business
+      </span>
+      <h2>Business & Leadership Skills</h2>
+      <p>Develop management, communication and entrepreneurship skills.</p>
+    </div>
+
+    <div class="courses-grid">
+
+      <!-- BUSINESS 1 -->
+      <article class="course-card" data-category="business">
+        <div class="course-image">
+          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900" alt="Entrepreneurship Fundamentals">
+          <span class="course-category">Business</span>
+        </div>
+
+        <div class="instructor">
+          <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Robert Wilson">
+          <div>
+            <h4>Robert Wilson</h4>
+            <span>Business Coach</span>
+          </div>
+        </div>
+
+        <div class="course-content">
+          <h3>Entrepreneurship Fundamentals</h3>
+
+          <div class="rating">
+            ★★★★★
+            <span>4.7 (2900)</span>
+          </div>
+
+          <div class="course-info">
+            <span><i class="fa-regular fa-clock"></i> 12 Hours</span>
+            <span><i class="fa-solid fa-users"></i> 5400 Students</span>
+          </div>
+
+          <div class="price">
+            <del>140€</del>
+            <strong>69€</strong>
+          </div>
+
+          <div class="button">
+            <a href="detail-cour.html">Enroll Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- BUSINESS 2 -->
+      <article class="course-card" data-category="business">
+        <div class="course-image">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900" alt="Digital Marketing Strategy">
+          <span class="course-category">Business</span>
+        </div>
+
+        <div class="instructor">
+          <img src="https://randomuser.me/api/portraits/women/25.jpg" alt="Sarah Johnson">
+          <div>
+            <h4>Sarah Johnson</h4>
+            <span>Marketing Specialist</span>
+          </div>
+        </div>
+
+        <div class="course-content">
+          <h3>Digital Marketing Strategy</h3>
+
+          <div class="rating">
+            ★★★★★
+            <span>4.8 (3700)</span>
+          </div>
+
+          <div class="course-info">
+            <span><i class="fa-regular fa-clock"></i> 20 Hours</span>
+            <span><i class="fa-solid fa-users"></i> 7600 Students</span>
+          </div>
+
+          <div class="price">
+            <del>160€</del>
+            <strong>79€</strong>
+          </div>
+
+          <div class="button">
+            <a href="detail-cour.html">Enroll Now</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!--  FINANCE COURSES  -->
+  <section class="courses-section">
+
+    <div class="section-title">
+      <span class="subtitle">
+        <i class="fa-solid fa-coins"></i>
+        Finance
+      </span>
+      <h2>Finance & Investment Courses</h2>
+      <p>Learn money management, accounting and financial analysis.</p>
+    </div>
+
+    <div class="courses-grid">
+
+      <article class="course-card" data-category="finance">
+        <div class="course-image">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900" alt="Financial Analysis With Excel">
+          <span class="course-category">Finance</span>
+        </div>
+
+        <div class="instructor">
+          <img src="https://randomuser.me/api/portraits/men/60.jpg" alt="William Carter">
+          <div>
+            <h4>William Carter</h4>
+            <span>Financial Expert</span>
+          </div>
+        </div>
+
+        <div class="course-content">
+          <h3>Financial Analysis With Excel</h3>
+
+          <div class="rating">
+            ★★★★★
+            <span>4.9 (2200)</span>
+          </div>
+
+          <div class="course-info">
+            <span><i class="fa-regular fa-clock"></i> 14 Hours</span>
+            <span><i class="fa-solid fa-users"></i> 4200 Students</span>
+          </div>
+
+          <div class="price">
+            <del>110€</del>
+            <strong>55€</strong>
+          </div>
+
+          <div class="button">
+            <a href="detail-cour.html">Enroll Now</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!--  FEATURED COURSE  -->
+  <section class="featured-course">
+
+    <div class="featured-image">
+      <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200" alt="Full Stack Developer course">
+    </div>
+
+    <div class="featured-content">
+      <span class="subtitle">
+        <i class="fa-solid fa-star"></i>
+        Featured Course
+      </span>
+
+      <h2>Become A Full Stack Developer</h2>
+
+      <p>
+        Master front-end and back-end development.
+        Learn HTML, CSS, JavaScript, React, Node.js and databases
+        with practical real-world projects.
+      </p>
+
+      <div class="featured-info">
+        <div><i class="fa-solid fa-video"></i> 120 Lessons</div>
+        <div><i class="fa-solid fa-clock"></i> 45 Hours</div>
+        <div><i class="fa-solid fa-certificate"></i> Certificate</div>
+      </div>
+
+      <button type="button">Start Learning</button>
+    </div>
+  </section>
+
+  <!--  STATISTICS  -->
+  <section class="learning-statistics">
+    <div class="stat-box">
+      <i class="fa-solid fa-users"></i>
+      <h2>15000+</h2>
+      <p>Students</p>
+    </div>
+
+    <div class="stat-box">
+      <i class="fa-solid fa-book-open"></i>
+      <h2>450+</h2>
+      <p>Courses</p>
+    </div>
+
+    <div class="stat-box">
+      <i class="fa-solid fa-user-tie"></i>
+      <h2>85+</h2>
+      <p>Teachers</p>
+    </div>
+
+    <div class="stat-box">
+      <i class="fa-solid fa-award"></i>
+      <h2>95%</h2>
+      <p>Success Rate</p>
+    </div>
+  </section>
+
+  <!--  STUDENT REVIEWS  -->
+  <section class="reviews-section">
+
+    <div class="section-title">
+      <span class="subtitle">
+        <i class="fa-solid fa-comments"></i>
+        Student Reviews
+      </span>
+      <h2>What Our Students Say</h2>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Anna Martinez">
+        <h3>Anna Martinez</h3>
+        <div class="stars">★★★★★</div>
+        <p>"The courses helped me improve my English skills and prepare for my international studies."</p>
+      </div>
+
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Lucas Martin">
+        <h3>Lucas Martin</h3>
+        <div class="stars">★★★★★</div>
+        <p>"I learned web development from zero and created my first professional website."</p>
+      </div>
+
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/35.jpg" alt="Sophie Laurent">
+        <h3>Sophie Laurent</h3>
+        <div class="stars">★★★★★</div>
+        <p>"The instructors are amazing and the lessons are clear and practical."</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!--  FAQ  -->
+  <section class="faq-section">
+
+    <div class="section-title">
+      <span class="subtitle">
+        <i class="fa-solid fa-circle-question"></i>
+        FAQ
+      </span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-container">
+
+      <div class="faq-item">
+        <h3>
+          How can I enroll in a course?
+          <i class="fa-solid fa-plus"></i>
+        </h3>
+        <p>Choose your course, click on Enroll Now, create your account and start learning.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>
+          Do I receive a certificate?
+          <i class="fa-solid fa-plus"></i>
+        </h3>
+        <p>Yes, students receive a certificate after successfully completing their courses.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>
+          Can I learn at my own pace?
+          <i class="fa-solid fa-plus"></i>
+        </h3>
+        <p>Yes, all courses are available online and you can learn whenever you want.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>
+          Are courses available on mobile?
+          <i class="fa-solid fa-plus"></i>
+        </h3>
+        <p>Yes, our platform works perfectly on computers, tablets and smartphones.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!--  NEWSLETTER  -->
+  <section class="newsletter">
+
+    <div class="left">
+      <span class="subtitle">
+        <i class="fa-solid fa-envelope"></i>
+        Newsletter
+      </span>
+      <h2>Never Miss New Courses</h2>
+      <p>Subscribe to receive new courses, learning tips and educational updates.</p>
+    </div>
+
+    <div class="right">
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="newsletter-success" id="newsletterSuccess">Thanks! Check your inbox to confirm your subscription.</p>
+    </div>
+
+  </section>
+
+  <!--  FOOTER  -->
+  <div id="footer"></div>
+
+</body>
+
+</html>

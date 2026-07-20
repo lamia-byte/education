@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Maintenance - Aokas Language School</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<link rel="stylesheet" href="404.css">
+
+</head>
+
+
+<body>
+
+
+<section class="status-page">
+
+
+<div class="status-container">
+
+
+<!-- Logo -->
+
+<a href="home.html" class="status-brand">
+
+    <span class="brand-mark">
+        <i class="fas fa-language"></i>
+    </span>
+
+    Aokas Language School
+
+</a>
+
+<!-- Icon (animated by the script below) -->
+
+<div class="maintenance-icon">
+    <i class="fas fa-gear"></i>
+</div>
+
+<!-- Title -->
+
+<h1 class="status-title">
+
+Nous améliorons votre expérience
+
+</h1>
+
+
+
+<p class="status-text">
+
+Notre site est actuellement en maintenance afin de vous offrir
+une plateforme plus rapide, moderne et agréable.
+Nous revenons très bientôt.
+
+</p>
+
+
+
+
+<!-- Progress -->
+
+<div class="status-progress-wrap">
+
+
+<div class="status-progress-label">
+
+<span>
+
+Progression de la maintenance
+
+</span>
+
+
+<strong>
+
+68%
+
+</strong>
+
+
+</div>
+
+
+
+<div class="status-progress-bar">
+
+
+<div class="status-progress-fill"></div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!-- Retour estimé -->
+
+<div class="countdown-grid">
+
+
+<div class="countdown-box">
+
+<strong id="hours">
+
+02
+
+</strong>
+
+<span>
+
+Heures
+
+</span>
+
+</div>
+
+
+
+<div class="countdown-box">
+
+<strong id="minutes">
+
+30
+
+</strong>
+
+<span>
+
+Minutes
+
+</span>
+
+</div>
+
+
+
+<div class="countdown-box">
+
+<strong id="seconds">
+
+45
+
+</strong>
+
+<span>
+
+Secondes
+
+</span>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- Email notification -->
+
+<div class="status-subscribe">
+
+
+<p>
+
+Recevez une notification dès que le site sera disponible.
+
+</p>
+
+
+
+<form class="subscribe-form" id="notifyForm">
+
+
+<input
+type="email"
+placeholder="Votre adresse e-mail"
+required>
+
+
+
+<button type="submit">
+
+Notifier
+
+</button>
+
+
+</form>
+
+
+
+<div class="subscribe-message" id="message"></div>
+
+
+</div>
+
+
+
+
+
+<!-- Buttons -->
+
+<div class="status-actions">
+
+
+<a href="home.html" class="btn-primary">
+
+
+<i class="fas fa-house"></i>
+
+Retour à l'accueil
+
+
+</a>
+
+
+
+<a href="contact.html" class="btn-secondary">
+
+
+<i class="fas fa-envelope"></i>
+
+Nous contacter
+
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<script>
+
+// Fix: this used to query ".maintenance-icon i", which didn't exist
+// anywhere in the page — every 2.5s it threw a TypeError trying to
+// read "style" of null. The icon now actually exists above (in the
+// "Icon" block), so the animation has something real to rotate.
+const gear = document.querySelector(".maintenance-icon i");
+
+if (gear) {
+
+    setInterval(() => {
+
+        gear.style.transform = "rotate(360deg)";
+
+        setTimeout(() => {
+            gear.style.transform = "rotate(0deg)";
+        }, 900);
+
+    }, 2500);
+
+}
+
+
+// Formulaire notification
+
+document
+.getElementById("notifyForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    document.getElementById("message").innerHTML =
+        "✓ Merci ! Vous serez informé dès le retour du site.";
+
+    this.reset();
+
+});
+
+
+// Compteur maintenance
+
+let totalSeconds = 2*3600 + 30*60 + 45;
+
+function updateTimer(){
+
+    let hours = Math.floor(totalSeconds/(60*60));
+    let minutes = Math.floor((totalSeconds%(60*60))/60);
+    let seconds = totalSeconds%60;
+
+    document.getElementById("hours").textContent = String(hours).padStart(2,"0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+
+    if (totalSeconds > 0) {
+        totalSeconds--;
+    }
+
+}
+
+updateTimer();
+setInterval(updateTimer, 1000);
+
+</script>
+
+
+
+</body>
+
+</html>

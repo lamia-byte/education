@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coming Soon - Aokas Language School</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="404.css">
+
+</head>
+
+<body>
+
+<section class="status-page">
+
+    <div class="status-container">
+
+        <!-- Logo -->
+
+        <a href="home.html" class="status-brand">
+
+            <span class="brand-mark">
+
+                <i class="fas fa-language"></i>
+
+            </span>
+
+            Aokas Language School
+
+        </a>
+
+        <!-- Titre -->
+
+        <h1 class="status-title">
+
+            Notre nouveau site arrive bientôt
+
+        </h1>
+
+        <!-- Description -->
+
+        <p class="status-text">
+
+            Nous préparons une expérience moderne pour apprendre les langues.
+            Découvrez prochainement nos nouveaux cours, nos enseignants
+            et nos services dans une plateforme entièrement repensée.
+
+        </p>
+
+        <!-- Countdown -->
+
+        <div class="countdown-grid">
+
+            <div class="countdown-box">
+
+                <strong id="days">00</strong>
+
+                <span>Jours</span>
+
+            </div>
+
+            <div class="countdown-box">
+
+                <strong id="hours">00</strong>
+
+                <span>Heures</span>
+
+            </div>
+
+            <div class="countdown-box">
+
+                <strong id="minutes">00</strong>
+
+                <span>Minutes</span>
+
+            </div>
+
+            <div class="countdown-box">
+
+                <strong id="seconds">00</strong>
+
+                <span>Secondes</span>
+
+            </div>
+
+        </div>
+
+        <!-- Email -->
+
+        <div class="status-subscribe">
+
+            <p>
+
+                Laissez votre adresse e-mail pour être informé du lancement.
+
+            </p>
+
+            <form class="subscribe-form" id="subscribeForm">
+
+                <input
+
+                    type="email"
+
+                    placeholder="Votre adresse e-mail"
+
+                    required
+
+                >
+
+                <button type="submit">
+
+                    Me prévenir
+
+                </button>
+
+            </form>
+
+            <div class="subscribe-message" id="message"></div>
+
+        </div>
+
+        <!-- Boutons -->
+
+        <div class="status-actions">
+
+            <a href="home.html" class="btn-primary">
+
+                <i class="fas fa-house"></i>
+
+                Retour à l'accueil
+
+            </a>
+
+            <a href="contact.html" class="btn-secondary">
+
+                <i class="fas fa-envelope"></i>
+
+                Nous contacter
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+// NOTE: this counts down 18 days from whenever the page is opened,
+// so every visitor always sees "18 days" left. Replace with a real
+// fixed target date once the launch date is confirmed, e.g.:
+// const launchDate = new Date("2026-09-01T00:00:00");
+const launchDate = new Date();
+launchDate.setDate(launchDate.getDate() + 18);
+
+function updateCountdown(){
+
+    const now = new Date().getTime();
+    const distance = launchDate - now;
+
+    const days = Math.max(0, Math.floor(distance / (1000*60*60*24)));
+    const hours = Math.max(0, Math.floor((distance % (1000*60*60*24)) / (1000*60*60)));
+    const minutes = Math.max(0, Math.floor((distance % (1000*60*60)) / (1000*60)));
+    const seconds = Math.max(0, Math.floor((distance % (1000*60)) / 1000));
+
+    document.getElementById("days").textContent = String(days).padStart(2,"0");
+    document.getElementById("hours").textContent = String(hours).padStart(2,"0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+document.getElementById("subscribeForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    document.getElementById("message").textContent =
+        "✅ Merci ! Nous vous informerons dès l'ouverture du site.";
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+
+</html>

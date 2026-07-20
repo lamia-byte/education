@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Connexion - Aokas Language School</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="auth.css">
+
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/auth.js" defer></script>
+</head>
+
+<body>
+
+
+        <section class="auth-page login-only">
+
+            <section class="auth-card" aria-labelledby="login-title">
+                <div class="auth-card-header">
+                    <h2 id="login-title">Connexion</h2>
+                    <p>Entrez vos informations pour continuer.</p>
+                </div>
+
+                <form class="auth-form" id="loginForm" novalidate>
+                    <div class="input-group">
+                        <label for="loginEmail">Email</label>
+                        <div class="input-control">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input id="loginEmail" name="email" type="email" placeholder="votre@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="loginPassword">Mot de passe</label>
+                        <div class="input-control">
+                            <i class="fa-solid fa-lock"></i>
+                            <input id="loginPassword" name="password" type="password" placeholder="Votre mot de passe" required>
+                            <button class="password-toggle" type="button" aria-label="Afficher le mot de passe">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-options">
+                        <label class="remember-check">
+                            <input type="checkbox" name="remember">
+                            <span>Se souvenir de moi</span>
+                        </label>
+                        <a href="contact.html">Mot de passe oublie ?</a>
+                    </div>
+
+                    <button class="auth-submit" type="submit">Se connecter</button>
+                    <p class="auth-message" aria-live="polite"></p>
+                </form>
+
+                <p class="auth-switch">
+                    Pas encore de compte ?
+                    <a href="inscription.html">Creer un compte</a>
+                </p>
+            </section>
+        </section>
+  
+
+</body>
+</html>

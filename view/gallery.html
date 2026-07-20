@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galerie</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/gallery.css">
+
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/gallery.js" defer></script>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main>
+        <!--======================================
+        HERO
+        =======================================-->
+        <section class="blog-hero">
+            <span class="subtitle">
+                <i class="fa-solid fa-book-open-reader"></i>
+                Our Gallery
+            </span>
+
+            <h1>Learn, Grow &amp; Stay Inspired</h1>
+
+            <p>
+                Discover expert articles, language learning tips, programming
+                tutorials, study strategies, and educational resources designed to
+                help students achieve academic and professional success.
+            </p>
+        </section>
+
+        <!--======================================
+        FILTRE GALERIE
+        =======================================-->
+        <section class="gallery-filter">
+            <div class="filter-top">
+                <span class="section-label">Top Articles</span>
+            </div>
+
+            <ul class="blog-filter">
+                <li><button type="button" class="filter-btn active" data-filter="all">All</button></li>
+                <li><button type="button" class="filter-btn" data-filter="events">Events</button></li>
+                <li><button type="button" class="filter-btn" data-filter="classrooms">Cours</button></li>
+                <li><button type="button" class="filter-btn" data-filter="students">Etudiants</button></li>
+            </ul>
+        </section>
+
+        <!--======================================
+        GRILLE D'IMAGES
+        =======================================-->
+        <section class="gallery-section">
+            <div class="gallery-grid">
+                <article class="gallery-item" data-category="events">
+                    <button class="gallery-card" type="button" aria-label="Voir Excursion a Alger">
+                        <img src="../assets/img/gellerie1.jpg" alt="Excursion de l'ecole a Alger">
+                        <span class="overlay">
+                            <span class="overlay-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span class="overlay-title">Excursion a Alger</span>
+                        </span>
+                    </button>
+                </article>
+
+                <article class="gallery-item" data-category="classrooms">
+                    <button class="gallery-card" type="button" aria-label="Voir Cours d'anglais">
+                        <img src="../assets/img/gellerie2.jpg" alt="Classe pendant un cours d'anglais">
+                        <span class="overlay">
+                            <span class="overlay-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span class="overlay-title">Cours d'anglais</span>
+                        </span>
+                    </button>
+                </article>
+
+                <article class="gallery-item" data-category="students">
+                    <button class="gallery-card" type="button" aria-label="Voir Activites etudiantes">
+                        <img src="../assets/img/gallerie3.jpg" alt="Etudiants pendant une activite">
+                        <span class="overlay">
+                            <span class="overlay-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span class="overlay-title">Activites etudiantes</span>
+                        </span>
+                    </button>
+                </article>
+
+                <article class="gallery-item" data-category="events">
+                    <button class="gallery-card" type="button" aria-label="Voir Concours de debat">
+                        <img src="../assets/img/gallerie4.jpg" alt="Evenement scolaire de debat">
+                        <span class="overlay">
+                            <span class="overlay-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span class="overlay-title">Concours de debat</span>
+                        </span>
+                    </button>
+                </article>
+
+                <article class="gallery-item" data-category="classrooms">
+                    <button class="gallery-card" type="button" aria-label="Voir Atelier de langue">
+                        <img src="../assets/img/gallerie5.jpg" alt="Atelier de langue en classe">
+                        <span class="overlay">
+                            <span class="overlay-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span class="overlay-title">Atelier de langue</span>
+                        </span>
+                    </button>
+                </article>
+
+                <article class="gallery-item" data-category="students">
+                    <button class="gallery-card" type="button" aria-label="Voir Certifications">
+                        <img src="../assets/img/gallerie6.jpg" alt="Remise de certifications aux etudiants">
+                        <span class="overlay">
+                            <span class="overlay-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span class="overlay-title">Certifications</span>
+                        </span>
+                    </button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox : rempli en JS quand on clique une carte de la galerie -->
+    <div class="gallery-lightbox" id="galleryLightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fermer l'image">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img src="" alt="" class="lightbox-image" id="lightboxImage">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>
