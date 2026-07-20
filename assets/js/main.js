@@ -25,36 +25,36 @@ const headerHtml = `
       </div>
 
       <ul class="nav-links">
-        <li><a href="../view/home.html">Home</a></li>
-        <li><a href="../view/about.html">About Us</a></li>
-        <li><a href="../view/professeur.html">Professeurs</a></li>
-        <li><a href="../view/cours.html">Cours</a></li>
-        <li><a href="../view/event.html">Events</a></li>
-        <li><a href="../view/gallery.html">Gallery</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="professeur.html">Professeurs</a></li>
+        <li><a href="cours.html">Cours</a></li>
+        <li><a href="event.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
         <li class="dropdown">
           <a href="#">
             Blog
             <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="../view/blogs.html">Blog</a></li>
-            <li><a href="../view/blog-detail.html">Blog Details</a></li>
-            <li><a href="../view/faq.html">FAQ</a></li>
-            <li><a href="../view/404.html">404 Page</a></li>
-            <li><a href="../view/503.html">503 Page</a></li>
-            <li><a href="../view/maintenance.html">Maintenance</a></li>
-             <li><a href="../view/coming-son.html">Coming soon</a></li>
+            <li><a href../blogs.html">Blog</a></li>
+            <li><a href="blog-detail.html">Blog Details</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="404.html">404 Page</a></li>
+            <li><a href="503.html">503 Page</a></li>
+            <li><a href="maintenance.html">Maintenance</a></li>
+             <li><a href="coming-son.html">Coming soon</a></li>
           </ul>
         </li>
-        <li><a href="../view/contact.html">Contact</a></li>
-        <li class="mobile-login-link"><a href="../view/login.html">Espace eleve</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="mobile-login-link"><a href="login.html">Espace eleve</a></li>
       </ul>
 
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
         <i class="fas fa-moon"></i>
       </button>
 
-      <a class="login-btn" href="../view/login.html">Espace eleve</a>
+      <a class="login-btn" href="login.html">Espace eleve</a>
 
       <button class="menu-toggle" type="button" aria-label="Ouvrir le menu">
         <i class="fas fa-bars"></i>
@@ -90,31 +90,31 @@ const footerHtml = `
       <div class="footer-section">
         <h3>A propos</h3>
         <ul>
-          <li><a href="../view/propos.html">Qui sommes-nous</a></li>
-          <li><a href="../view/propos.html">Notre mission</a></li>
-          <li><a href="../view/professeur.html">Notre equipe</a></li>
-          <li><a href="../view/contact.html">Contact</a></li>
+          <li><a href="propos.html">Qui sommes-nous</a></li>
+          <li><a href="propos.html">Notre mission</a></li>
+          <li><a href="professeur.html">Notre equipe</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-section">
         <h3>Cours</h3>
         <ul>
-          <li><a href="../view/anglais.html">Anglais</a></li>
-          <li><a href="../view/francais.html">Francais</a></li>
-          <li><a href="../view/espagnol.html">Espagnol</a></li>
-          <li><a href="../view/allemand.html">Allemand</a></li>
-          <li><a href="../view/cours.html">Tous les cours</a></li>
+          <li><a href="anglais.html">Anglais</a></li>
+          <li><a href="francais.html">Francais</a></li>
+          <li><a href="espagnol.html">Espagnol</a></li>
+          <li><a href="allemand.html">Allemand</a></li>
+          <li><a href="cours.html">Tous les cours</a></li>
         </ul>
       </div>
 
       <div class="footer-section">
         <h3>Ressources</h3>
         <ul>
-          <li><a href="../view/evenement.html">Evenements</a></li>
-          <li><a href="../view/galerie.html">Galerie</a></li>
-          <li><a href="../view/inscription.html">Inscription</a></li>
-          <li><a href="../view/faq.html">FAQ</a></li>
+          <li><a href="evenement.html">Evenements</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="inscription.html">Inscription</a></li>
+          <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
 
