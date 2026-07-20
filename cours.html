@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
   <!-- Main CSS -->
-  <link rel="stylesheet" href="../assets/css/main.css">
-  <link rel="stylesheet" href="../assets/css/cours.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/cours.css">
 
-  <script src="../assets/js/main.js" defer></script>
-  <script src="../assets/js/cours.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/cours.js" defer></script>
 </head>
 
 <body>
@@ -43,13 +43,24 @@
       Improve your language, technology, design and business skills.
     </p>
 
-  
-
-
   </section>
 
   <!--  POPULAR COURSES  -->
   <section class="courses-section">
+
+    <div class="section-title">
+      <span class="subtitle">
+        <i class="fa-solid fa-book-open"></i>
+        Popular Courses
+      </span>
+      <h2>Featured Courses</h2>
+      <p>Learn from professional teachers and industry experts.</p>
+    </div>
+
+    <div class="course-filter-wrap">
+      <button class="filter-arrow" id="filterPrev" type="button" aria-label="Scroll filters left">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
 
       <ul class="course-filter" id="courseFilter">
         <li><button type="button" class="filter-chip active" data-filter="all">All</button></li>
@@ -65,12 +76,6 @@
         <li><button type="button" class="filter-chip" data-filter="data-science">Data Science</button></li>
         <li><button type="button" class="filter-chip" data-filter="cloud">Cloud</button></li>
       </ul>
-      
-    <div class="course-filter-wrap">
-      <button class="filter-arrow" id="filterPrev" type="button" aria-label="Scroll filters left">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-
 
       <button class="filter-arrow" id="filterNext" type="button" aria-label="Scroll filters right">
         <i class="fa-solid fa-chevron-right"></i>
@@ -78,14 +83,6 @@
     </div>
 
     <p class="no-courses" id="noCoursesFound">No courses match your search yet.</p>
-    <div class="section-title">
-      <span class="subtitle">
-        <i class="fa-solid fa-book-open"></i>
-        Popular Courses
-      </span>
-      <h2>Featured Courses</h2>
-      <p>Learn from professional teachers and industry experts.</p>
-    </div>
 
     <div class="courses-grid">
 

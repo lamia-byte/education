@@ -1,6 +1,6 @@
 /*
-  Page Courses : accordeon FAQ, scroll des filtres, filtre categorie + recherche,
-  et confirmation d'inscription newsletter
+  Courses page: FAQ accordion, filter row scrolling, category + search
+  filtering, and newsletter submit confirmation
 */
 
 function initFaqAccordion() {
@@ -55,7 +55,7 @@ function initCourseFilterAndSearch() {
       if (isVisible) visibleCount += 1;
     });
 
-    // masque une section entiere si plus aucune carte n'y est visible
+    // hide an entire section if none of its cards are visible anymore
     courseSections.forEach((section) => {
       const cardsInSection = section.querySelectorAll(".course-card");
       const hasVisibleCard = Array.from(cardsInSection).some((card) => !card.classList.contains("is-hidden"));
@@ -90,8 +90,8 @@ function initNewsletterForm() {
   const successMsg = document.getElementById("newsletterSuccess");
   if (!form) return;
 
-  // pas de backend branche pour le moment : on evite juste que le formulaire
-  // recharge la page, et on confirme l'inscription a l'ecran
+  // no backend wired up yet: just stop the page from reloading
+  // and confirm the subscription on screen
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 

@@ -105,6 +105,8 @@ HERO TITLE
 
 /*
 COURSE SEARCH
+(kept in case the search box comes back to the hero — it isn't in the
+current HTML anymore, so this block is unused for now)
 */
 
 .course-search {
@@ -143,13 +145,14 @@ COURSE SEARCH
 
     background: none;
     color: var(--text);
+    font-family: inherit;
 }
 
 .course-search button {
     border: none;
 
     background: var(--primary);
-    color: white;
+    color: var(--white);
 
     padding: 15px 30px;
 
@@ -178,7 +181,9 @@ COURSE FILTER
     width: 100%;
     max-width: 900px;
 
-    margin: 35px auto 0;
+    /* sits right under the section title now, not in the hero anymore,
+       so no top margin needed here */
+    margin: 0 auto 45px;
 }
 
 .course-filter {
@@ -205,7 +210,7 @@ COURSE FILTER
     list-style: none;
 }
 
-/* boutons de filtre (etaient des <li> non cliquables au clavier, remplaces par de vrais <button>) */
+/* filter buttons (were unclickable-by-keyboard <li>, replaced with real <button>) */
 .filter-chip {
     display: block;
 
@@ -227,7 +232,7 @@ COURSE FILTER
 .filter-chip.active,
 .filter-chip:hover {
     background: var(--primary);
-    color: #fff;
+    color: var(--white);
 }
 
 .filter-chip:focus-visible {
@@ -243,13 +248,15 @@ COURSE FILTER
     border-radius: 50%;
 
     background: var(--primary);
-    color: #fff;
+    color: var(--white);
 
     cursor: pointer;
     flex-shrink: 0;
 }
 
-/* message affiche quand aucun cours ne correspond au filtre / a la recherche */
+/* message shown when no course matches the active filter / search
+   (sits on the light .courses-section background now, so this needs
+   to be dark text, not white) */
 .no-courses {
     display: none;
     margin-top: 30px;
@@ -300,7 +307,7 @@ COURSES SECTION (POPULAR / DESIGN / BUSINESS / FINANCE)
     background: var(--bg-section);
 }
 
-/* cache une section entiere si le filtre actif ne laisse aucune carte visible dedans */
+/* hides an entire section if the active filter leaves no visible card in it */
 .courses-section.is-empty {
     display: none;
 }
@@ -333,7 +340,7 @@ COURSE CARD
     box-shadow: var(--shadow-lg);
 }
 
-/* carte masquee par le filtre / la recherche */
+/* card hidden by the filter / search */
 .course-card.is-hidden {
     display: none;
 }
@@ -1051,7 +1058,7 @@ NEWSLETTER
     box-shadow: var(--shadow-md);
 }
 
-/* message de confirmation apres soumission (masque par defaut, voir cours.js) */
+/* confirmation message after submit, hidden by default (see cours.js) */
 .newsletter-success {
     display: none;
     margin-top: 12px;
