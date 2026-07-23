@@ -257,13 +257,13 @@ KEY NUMBERS
 
 .chiffre{
 
-    margin-top:60px;
+    margin-top:20px;
 
     padding:40px;
 
     background:var(--bg-section);
 
-    border:1px solid var(--border);
+   
 
     border-radius:var(--radius);
 
@@ -307,23 +307,13 @@ KEY NUMBERS
 
     background:var(--white);
 
-    border:1px solid var(--border);
-
+   
     border-radius:16px;
 
     transition:var(--transition);
 
 }
 
-.chiffre-item:hover{
-
-    transform:translateY(-6px);
-
-    border-color:var(--secondary);
-
-    box-shadow:var(--shadow-md);
-
-}
 
 .chiffre-item h3{
 

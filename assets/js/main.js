@@ -1,15 +1,15 @@
 /*
-  Injection du header/footer + interactions du site
-  (menu mobile, sous-menu Blog, lien actif, dark mode)
+  Header/footer injection + site interactions
+  (mobile menu, Blog submenu, active link, dark mode)
 */
 
 const headerHtml = `
   <header>
     <div class="top-header">
       <div class="contact-info">
-        <span><i class="fas fa-map-marker-alt"></i> 123 Rue Exemple, Ville</span>
+        <span><i class="fas fa-map-marker-alt"></i> 123 Example Street, City</span>
         <span><i class="fas fa-phone"></i> +123 456 7890</span>
-        <span><i class="fas fa-envelope"></i> contact@aokaslang.com</span>
+        <span><i class="fas fa-envelope"></i> contact@edusphere.com</span>
       </div>
       <div class="social-media">
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -20,15 +20,15 @@ const headerHtml = `
 
     <nav class="navbar">
       <div class="logo">
-        <h1>School</h1>
-        <p>LANGUAGE SCHOOL</p>
+        <h1>EduSphere</h1>
+        <p>TRAINING CENTER</p>
       </div>
 
       <ul class="nav-links">
-        <li><a href="home.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="professeur.html">Professeurs</a></li>
-        <li><a href="cours.html">Cours</a></li>
+        <li><a href="professeur.html">Instructors</a></li>
+        <li><a href="cours.html">Courses</a></li>
         <li><a href="event.html">Events</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li class="dropdown">
@@ -37,26 +37,30 @@ const headerHtml = `
             <i class="fas fa-chevron-down"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a href../blogs.html">Blog</a></li>
+            <li><a href="blogs.html">Blog</a></li>
             <li><a href="blog-detail.html">Blog Details</a></li>
+            <li><a href="professeur-detail.html">Teacher Profile</a></li>
+            <li><a href="event-detail.html">Event Page</a></li>
+              <li><a href="detail.cour.html">Cour Page</a></li>
+
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="404.html">404 Page</a></li>
             <li><a href="503.html">503 Page</a></li>
             <li><a href="maintenance.html">Maintenance</a></li>
-             <li><a href="coming-son.html">Coming soon</a></li>
+            <li><a href="coming-soon.html">Coming Soon</a></li>
           </ul>
         </li>
         <li><a href="contact.html">Contact</a></li>
-        <li class="mobile-login-link"><a href="login.html">Espace eleve</a></li>
+        <li class="mobile-login-link"><a href="login.html">Student Portal</a></li>
       </ul>
 
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
         <i class="fas fa-moon"></i>
       </button>
 
-      <a class="login-btn" href="login.html">Espace eleve</a>
+      <a class="login-btn" href="login.html">Student Portal</a>
 
-      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu">
+      <button class="menu-toggle" type="button" aria-label="Open menu">
         <i class="fas fa-bars"></i>
       </button>
     </nav>
@@ -69,15 +73,16 @@ const footerHtml = `
 
       <div class="footer-section footer-about">
         <div class="footer-logo">
-          <h2>A</h2>
+          <h2>E</h2>
           <div>
-            <h3>AOKAS</h3>
-            <span>Language School</span>
+            <h3>EDUSPHERE</h3>
+            <span>Training Center</span>
           </div>
         </div>
         <p>
-          Votre partenaire de confiance pour l'apprentissage des langues.
-          Des programmes adaptes a tous les niveaux pour ouvrir les portes du monde.
+          Your trusted partner for professional and personal development.
+          Programs tailored to every level, across every field, to help you
+          reach your full potential.
         </p>
         <div class="social-links">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -88,51 +93,51 @@ const footerHtml = `
       </div>
 
       <div class="footer-section">
-        <h3>A propos</h3>
+        <h3>About</h3>
         <ul>
-          <li><a href="propos.html">Qui sommes-nous</a></li>
-          <li><a href="propos.html">Notre mission</a></li>
-          <li><a href="professeur.html">Notre equipe</a></li>
+          <li><a href="propos.html">Who We Are</a></li>
+          <li><a href="propos.html">Our Mission</a></li>
+          <li><a href="professeur.html">Our Team</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-section">
-        <h3>Cours</h3>
+        <h3>Courses</h3>
         <ul>
-          <li><a href="anglais.html">Anglais</a></li>
-          <li><a href="francais.html">Francais</a></li>
-          <li><a href="espagnol.html">Espagnol</a></li>
-          <li><a href="allemand.html">Allemand</a></li>
-          <li><a href="cours.html">Tous les cours</a></li>
+          <li><a href="business.html">Business</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="design.html">Design</a></li>
+          <li><a href="personal-development.html">Personal Development</a></li>
+          <li><a href="cours.html">All Courses</a></li>
         </ul>
       </div>
 
       <div class="footer-section">
-        <h3>Ressources</h3>
+        <h3>Resources</h3>
         <ul>
-          <li><a href="evenement.html">Evenements</a></li>
-          <li><a href="galerie.html">Galerie</a></li>
-          <li><a href="inscription.html">Inscription</a></li>
+          <li><a href="evenement.html">Events</a></li>
+          <li><a href="galerie.html">Gallery</a></li>
+          <li><a href="inscription.html">Enrollment</a></li>
           <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
 
       <div class="footer-section">
         <h3>Contact</h3>
-        <p><i class="fas fa-location-dot"></i> 123 Rue Exemple, Ville</p>
+        <p><i class="fas fa-location-dot"></i> 123 Example Street, City</p>
         <p><i class="fas fa-phone"></i> +123 456 7890</p>
-        <p><i class="fas fa-envelope"></i> contact@aokaslang.com</p>
+        <p><i class="fas fa-envelope"></i> contact@edusphere.com</p>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 Aokas Language School. Tous droits reserves.</p>
+      <p>&copy; 2026 EduSphere Training Center. All rights reserved.</p>
       <div class="footer-links">
-        <a href="#">Politique de confidentialite</a>
-        <a href="#">Conditions d'utilisation</a>
-        <a href="#">Mentions legales</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Legal Notice</a>
       </div>
     </div>
   </footer>
@@ -153,22 +158,22 @@ function initMobileMenu() {
 
   menuToggle.addEventListener("click", () => {
     const isOpen = navLinks.classList.toggle("active");
-    menuToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+    menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
   });
 
-  // on referme le menu des qu'on clique un lien, sinon il reste ouvert
-  // apres avoir change de page sur mobile
+  // close the menu as soon as a link is clicked, otherwise it stays open
+  // after navigating to another page on mobile
   navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("active");
-      menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+      menuToggle.setAttribute("aria-label", "Open menu");
     });
   });
 }
 
 function initDropdown() {
-  // le sous-menu Blog s'ouvre au survol sur desktop (voir CSS),
-  // mais il n'y a pas de survol au tactile donc il faut gerer le clic ici
+  // the Blog submenu opens on hover on desktop (see CSS),
+  // but there's no hover on touch devices so we handle the click here
   const dropdown = document.querySelector(".dropdown");
   if (!dropdown) return;
 
@@ -209,7 +214,7 @@ function initThemeToggle() {
     try {
       localStorage.setItem("theme", theme);
     } catch (err) {
-      // navigation privee ou storage bloque, on ne casse pas le site pour autant
+      // private browsing or storage blocked, don't break the site over it
     }
   }
 

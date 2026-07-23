@@ -96,10 +96,31 @@ a {
 ========================================================== */
 
 .page {
-  width: 100%;
-  text-align: center;
-  padding: 80px 0;
   position: relative;
+  overflow: hidden;
+
+  min-height: 100vh;
+display: flex;
+flex-direction: column;
+ 
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 20px;
+
+  background: var(--white);
+}
+.status-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(#eee 1px, transparent 1px),
+    linear-gradient(90deg, #eee 1px, transparent 1px);
+
+  background-size: 45px 45px;
+  opacity: .5;
 }
 
 .number {
@@ -107,8 +128,8 @@ a {
   font-weight: 900;
   line-height: 1;
 
-  color: transparent;
-  -webkit-text-stroke: 4px var(--primary);
+
+
   letter-spacing: 10px;
 }
 

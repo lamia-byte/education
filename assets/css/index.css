@@ -127,6 +127,7 @@ a{
     line-height:1.15;
     margin-bottom:25px;
     font-weight:800;
+    color: var(--white);
 }
 
 .home-hero-content p{
@@ -292,7 +293,7 @@ section:not(.home-hero){
 }
 
 
-/* even section rhythm + subtle card hover shine */
+/* even section rhythm */
 
 .categories-section,
 .popular-courses,
@@ -322,44 +323,6 @@ section:not(.home-hero){
     position:relative;
     overflow:hidden;
     will-change:transform;
-}
-
-.category-card::after,
-.course-card::after,
-.event-card::after,
-.hero-feature-card::after,
-.review-card::after,
-.faq-item::after,
-.stat-box::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(120deg,transparent 0%,rgba(229,57,53,.08) 50%,transparent 100%);
-    transform:translateX(-120%);
-    transition:transform .7s ease;
-    pointer-events:none;
-    z-index:0;
-}
-
-.category-card:hover::after,
-.course-card:hover::after,
-.event-card:hover::after,
-.hero-feature-card:hover::after,
-.review-card:hover::after,
-.faq-item:hover::after,
-.stat-box:hover::after{
-    transform:translateX(120%);
-}
-
-.category-card > *,
-.course-card > *,
-.event-card > *,
-.hero-feature-card > *,
-.review-card > *,
-.faq-item > *,
-.stat-box > *{
-    position:relative;
-    z-index:1;
 }
 
 
@@ -430,7 +393,7 @@ section:not(.home-hero){
 .category-card:hover{
     transform:translateY(-8px);
     box-shadow:var(--shadow-lg);
-    border-color:transparent;
+    border-color:var(--border);
 }
 
 .category-image{
@@ -484,7 +447,7 @@ section:not(.home-hero){
 }
 
 .category-card:hover .category-icon{
-    background:var(--secondary);
+    background:var(--primary-light);
     transform:rotate(-8deg) scale(1.05);
 }
 
@@ -517,7 +480,7 @@ section:not(.home-hero){
 }
 
 .category-card:hover .category-link{
-    color:var(--secondary);
+    color:var(--primary);
     gap:12px;
 }
 
@@ -862,7 +825,7 @@ section:not(.home-hero){
 }
 
 .course-content .button a:hover{
-    background:var(--secondary);
+    background:var(--primary-light);
     transform:translateY(-3px);
     box-shadow:var(--shadow-md);
 }
@@ -953,7 +916,7 @@ section:not(.home-hero){
 }
 
 .hero-feature-card a:hover{
-    color:var(--secondary);
+    color:var(--primary-light);
     text-decoration:underline;
 }
 
@@ -1056,7 +1019,7 @@ section:not(.home-hero){
 }
 
 .btn-cta:hover{
-    background:var(--secondary);
+    background:var(--primary-light);
     color:var(--white);
     transform:translateY(-4px);
     box-shadow:var(--shadow-lg);
@@ -1331,7 +1294,7 @@ section:not(.home-hero){
 }
 
 .event-footer a:hover{
-    background:var(--secondary);
+    background:var(--primary-light);
 }
 
 @media(max-width:1100px){
@@ -1721,7 +1684,7 @@ section:not(.home-hero){
 }
 
 .faq-item.active{
-    border-color:rgba(229,57,53,.35);
+    border-color:var(--primary-light);
     box-shadow:var(--shadow-lg);
 }
 
@@ -1744,7 +1707,7 @@ section:not(.home-hero){
     transition:.3s;
 }
 
-.faq-item:hover i{
+.faq-item.active .faq-header i{
     transform:rotate(180deg);
 }
 
@@ -1757,10 +1720,6 @@ section:not(.home-hero){
 
 .faq-item.active .faq-content{
     padding:0 26px 24px;
-}
-
-.faq-item.active .faq-header i{
-    transform:rotate(180deg);
 }
 
 .faq-content p{
@@ -1850,7 +1809,7 @@ section:not(.home-hero){
 
 .newsletter-form button:hover{
     transform:translateY(-4px);
-    background:var(--secondary);
+    background:var(--primary-light);
     color:var(--white);
     box-shadow:var(--shadow-md);
 }
@@ -2031,7 +1990,7 @@ section:not(.home-hero){
 }
 
 .back-to-top:hover{
-    background:var(--secondary);
+    background:var(--primary-light);
     transform:translateY(-5px);
 }
 

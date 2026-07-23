@@ -3,18 +3,17 @@ BLOG DETAILS PAGE
 */
 
 
-
-
-
 /*
 READING PROGRESS BAR
+(offset aligned with the fixed header height defined in main.css,
+ otherwise the bar hides behind the header)
 */
 
 .reading-progress{
 
     position:sticky;
 
-    top:0;
+    top:calc(var(--topbar-height) + var(--navbar-height));
 
     left:0;
     right:0;
@@ -39,9 +38,30 @@ READING PROGRESS BAR
 
 }
 
+@media (max-width:1100px){
+
+.reading-progress{
+
+    top:var(--navbar-height-tablet);
+
+}
+
+}
+
+@media (max-width:480px){
+
+.reading-progress{
+
+    top:70px;
+
+}
+
+}
+
 
 /*
 ARTICLE HERO
+(always navy, in both light and dark mode — same pattern as the blog hero)
 */
 
 .article-hero{
@@ -53,9 +73,7 @@ ARTICLE HERO
 
     text-align:center;
 
-    background:linear-gradient(135deg,
-    var(--primary),
-    var(--primary-dark));
+    background:linear-gradient(135deg, #10244B, #0A1733);
 
 }
 
@@ -103,7 +121,10 @@ ARTICLE HERO
 
 }
 
-.theme-toggle{
+/* dead code today (no matching element in the HTML), renamed so it can
+   never collide with the real dark-mode toggle button in main.css */
+
+.article-theme-toggle{
 
     position:absolute;
 
@@ -121,7 +142,7 @@ ARTICLE HERO
 
     background:rgba(255,255,255,.14);
 
-    color:var(--white);
+    color:#fff;
 
     font-size:15px;
 
@@ -135,7 +156,7 @@ ARTICLE HERO
 
 }
 
-.theme-toggle:hover{
+.article-theme-toggle:hover{
 
     background:rgba(255,255,255,.25);
 
@@ -175,7 +196,7 @@ BREADCRUMB
 
 .article-hero .breadcrumb a:hover{
 
-    color:var(--white);
+    color:#fff;
 
 }
 
@@ -189,7 +210,7 @@ BREADCRUMB
 
 .article-hero .breadcrumb span{
 
-    color:var(--white);
+    color:#fff;
     font-weight:600;
 
 }
@@ -211,7 +232,7 @@ CATEGORY BADGE
 
     background:rgba(255,255,255,.12);
 
-    color:var(--white);
+    color:#fff;
 
     font-size:13px;
     font-weight:700;
@@ -231,7 +252,7 @@ TITLE / EXCERPT
     font-weight:800;
     line-height:1.25;
 
-    color:var(--white);
+    color:#fff;
 
     margin-bottom:18px;
 
@@ -280,7 +301,7 @@ META ROW
 
 .article-meta i{
 
-    color:var(--white);
+    color:#fff;
 
 }
 
@@ -307,7 +328,7 @@ META ROW
 
 .meta-author h5{
 
-    color:var(--white);
+    color:#fff;
 
     font-size:15px;
 
@@ -478,7 +499,8 @@ blockquote::before{
     font-weight:800;
     font-style:normal;
 
-    color:rgba(16,36,75,.10);
+    color:var(--text);
+    opacity:.1;
 
     line-height:1;
 
@@ -614,6 +636,14 @@ SHARE
     color:var(--white);
 
     transform:translateY(-3px);
+
+}
+
+.share-icons a.copied{
+
+    background:var(--success);
+
+    color:#fff;
 
 }
 
@@ -984,7 +1014,7 @@ COMMENT FORM
 
 .comment-form button:hover{
 
-    background:var(--primary-dark);
+    background:var(--primary-light);
 
     transform:translateY(-3px);
 
@@ -1216,7 +1246,7 @@ AUTHOR MINI BOX
 
 .sidebar-btn:hover{
 
-    background:var(--primary-dark);
+    background:var(--primary-light);
 
     transform:translateY(-3px);
 
@@ -1340,6 +1370,7 @@ TAG CLOUD
 
 /*
 SIDEBAR NEWSLETTER
+(always navy, same fixed-brand pattern as the article hero)
 */
 
 .sidebar-newsletter{
@@ -1350,7 +1381,7 @@ SIDEBAR NEWSLETTER
 
     border-radius:20px;
 
-    background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+    background:linear-gradient(135deg, #10244B, #0A1733);
 
     box-shadow:var(--shadow-md);
 
@@ -1371,7 +1402,7 @@ SIDEBAR NEWSLETTER
 
     background:rgba(255,255,255,.14);
 
-    color:var(--white);
+    color:#fff;
 
     font-size:20px;
 
@@ -1379,7 +1410,7 @@ SIDEBAR NEWSLETTER
 
 .sidebar-newsletter h4{
 
-    color:var(--white);
+    color:#fff;
 
     font-size:17px;
 
@@ -1431,9 +1462,9 @@ SIDEBAR NEWSLETTER
 
     border-radius:10px;
 
-    background:var(--white);
+    background:#fff;
 
-    color:var(--primary);
+    color:#10244B;
 
     font-weight:700;
     font-size:13px;
@@ -1446,9 +1477,9 @@ SIDEBAR NEWSLETTER
 
 .sidebar-newsletter button:hover{
 
-    background:var(--black-soft);
+    background:var(--secondary);
 
-    color:var(--white);
+    color:#fff;
 
 }
 
@@ -1512,6 +1543,30 @@ RELATED ARTICLES
     grid-template-columns:repeat(3,1fr);
 
     gap:32px;
+
+}
+
+
+/*
+SCROLL-REVEAL ANIMATIONS
+(classes are added dynamically by blog-detail.js via IntersectionObserver)
+*/
+
+.fade-in-up{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:opacity .7s ease, transform .7s ease;
+
+}
+
+.fade-in-up.in-view{
+
+    opacity:1;
+
+    transform:translateY(0);
 
 }
 
@@ -1581,7 +1636,7 @@ RESPONSIVE
 
 }
 
-.theme-toggle{
+.article-theme-toggle{
 
     top:16px;
     right:16px;

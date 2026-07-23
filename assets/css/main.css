@@ -1,5 +1,5 @@
 /*
-  MAIN.CSS - Design system partage
+  MAIN.CSS - Shared design system
   (header, navbar, footer, dark mode)
 */
 
@@ -81,6 +81,7 @@
 
   --container-width: 1320px;
   --transition: .35s ease;
+  --transition-fast: .2s ease;
 
   --topbar-height: 45px;
   --navbar-height: 80px;
@@ -160,22 +161,73 @@ body.dark-mode p {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-primary);
   background: var(--bg);
   color: var(--text);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   transition: background .35s ease, color .35s ease;
-  /* le header est en position:fixed, on decale le contenu pour ne pas
-     qu'il passe en dessous */
+  /* the header is position:fixed, so we offset the content
+     so it doesn't sit underneath it */
   padding-top: calc(var(--topbar-height) + var(--navbar-height));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--fw-bold);
+  line-height: 1.3;
+  color: var(--text);
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 ul {
   list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: var(--font-primary);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--secondary);
+  color: #fff;
+}
+
+/* custom scrollbar (webkit browsers) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-section);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-light);
+  border-radius: var(--radius-round);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
 }
 
 a:focus-visible,
@@ -217,17 +269,19 @@ header {
   align-items: center;
   gap: 8px;
   color: #fff;
-  font-size: 14px;
+  font-size: var(--fs-sm);
+  letter-spacing: .2px;
 }
 
 .social-media a {
   color: #fff;
   font-size: 15px;
-  transition: .3s;
+  transition: var(--transition-fast);
 }
 
 .social-media a:hover {
   color: var(--secondary);
+  transform: translateY(-2px);
 }
 
 /* NAVBAR */
@@ -237,15 +291,14 @@ header {
   background: var(--white);
   display: flex;
   justify-content: space-between;
-
+ gap:20px;
   padding: 0 6%;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
-  
 }
 
 .logo {
-    flex:6%;
+  flex: 6%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -255,12 +308,14 @@ header {
   color: var(--primary);
   font-size: 30px;
   line-height: 1;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
+  letter-spacing: -.3px;
 }
 
 .logo p {
   color: var(--secondary);
-  font-size: 12px;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
   letter-spacing: 2px;
   margin-top: 4px;
 }
@@ -268,7 +323,7 @@ header {
 /* MENU */
 
 .nav-links {
-    flex:40%;
+  flex: 40%;
   display: flex;
   align-items: center;
   gap: 40px;
@@ -279,10 +334,11 @@ header {
 
 .nav-links a {
   color: var(--text);
-  font-size: 16px;
-  font-weight: 500;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  letter-spacing: .2px;
   position: relative;
-  transition: .3s;
+  transition: var(--transition-fast);
 }
 
 .nav-links a::after {
@@ -293,7 +349,7 @@ header {
   width: 0;
   height: 2px;
   background: var(--secondary);
-  transition: .3s;
+  transition: var(--transition-fast);
 }
 
 .nav-links a:hover {
@@ -304,14 +360,14 @@ header {
   width: 100%;
 }
 
-/* lien actif : ajoute en JS via classList (highlightActiveNavLink) */
+/* active link : added via JS classList (highlightActiveNavLink) */
 .nav-links a.active-link {
   color: var(--secondary);
   border-bottom: 2px solid var(--secondary);
   padding-bottom: 8px;
 }
 
-/* DROPDOWN (sous-menu Blog) */
+/* DROPDOWN (Blog submenu) */
 
 .dropdown {
   position: relative;
@@ -325,7 +381,7 @@ header {
 
 .dropdown > a i {
   font-size: 12px;
-  transition: .3s;
+  transition: var(--transition-fast);
 }
 
 .dropdown-menu {
@@ -335,11 +391,11 @@ header {
   min-width: 220px;
   background: var(--white);
   border-radius: 12px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, .12);
+  box-shadow: var(--shadow-lg);
   opacity: 0;
   visibility: hidden;
   transform: translateY(15px);
-  transition: .35s;
+  transition: var(--transition);
   padding: 10px 0;
   z-index: 999;
 }
@@ -358,7 +414,8 @@ header {
   display: block;
   padding: 12px 20px;
   color: var(--text);
-  transition: .3s;
+  font-size: var(--fs-sm);
+  transition: var(--transition-fast);
 }
 
 .dropdown-menu li a:hover {
@@ -368,8 +425,8 @@ header {
 }
 
 @media (max-width: 992px) {
-  /* pas de survol au tactile : le sous-menu est pilote par le clic en JS
-     (classe .active posee sur .dropdown, voir initDropdown) */
+  /* no hover on touch : the submenu is driven by click in JS
+     (.active class set on .dropdown, see initDropdown) */
   .dropdown-menu {
     position: static;
     opacity: 1;
@@ -391,24 +448,30 @@ header {
   }
 }
 
-/* BOUTON CONNEXION */
+/* LOGIN BUTTON */
 
 .login-btn {
- 
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--secondary);
   color: #fff;
-  padding: 6px 22px;
+  padding: 12px 22px;
   border-radius: 15px;
-  transition: .3s;
-  font-weight: 600;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  letter-spacing: .2px;
+ 
+  transition: var(--transition-fast);
+  max-height: 150px;
+  margin:auto 0;
 }
 
 .login-btn:hover {
   background: var(--primary);
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* HAMBURGER */
@@ -426,7 +489,7 @@ header {
   display: none;
 }
 
-/* BOUTON DARK MODE */
+/* DARK MODE TOGGLE */
 
 .theme-toggle {
   width: 45px;
@@ -439,10 +502,11 @@ header {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: .35s;
+  transition: var(--transition);
   box-shadow: var(--shadow-sm);
-  margin-left: auto;
-  margin-right: 15px;
+ 
+  
+  margin:auto 0;
 }
 
 .theme-toggle:hover {
@@ -457,7 +521,7 @@ header {
   }
 }
 
-/* TABLETTE */
+/* TABLET */
 
 @media (max-width: 1100px) {
   body {
@@ -499,8 +563,8 @@ header {
     gap: 0;
     padding: 30px;
     overflow-y: auto;
-    transition: .35s;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+    transition: var(--transition);
+    box-shadow: var(--shadow-lg);
   }
 
   .nav-links.active {
@@ -543,7 +607,7 @@ header {
   }
 }
 
-/* PETIT MOBILE */
+/* SMALL MOBILE */
 
 @media (max-width: 480px) {
   .navbar {
@@ -610,22 +674,25 @@ header {
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 30px;
+  font-size: 28px;
+  box-shadow: 0 8px 20px rgba(229, 57, 53, .3);
 }
 
 .footer-logo h3 {
   color: white;
-  font-size: 24px;
+  font-size: 22px;
+  letter-spacing: .5px;
 }
 
 .footer-logo span {
   color: rgba(255, 255, 255, .7);
-  font-size: 14px;
+  font-size: var(--fs-sm);
   display: block;
 }
 
 .footer-section h3 {
   margin-bottom: 25px;
+  font-size: var(--fs-md);
   position: relative;
   color: var(--text-white);
 }
@@ -647,11 +714,12 @@ header {
 
 .footer-section ul li a {
   display: inline-block;
-  transition: .3s;
+  transition: var(--transition-fast);
 }
 
 .footer-section ul li a:hover {
   transform: translateX(8px);
+  color: var(--secondary);
 }
 
 .footer-section p i {
@@ -761,7 +829,7 @@ header {
   }
 }
 
-/* FORMULAIRES / CARTES - retouches dark mode */
+/* FORMS / CARDS - dark mode fine-tuning */
 
 input,
 textarea,
@@ -770,6 +838,15 @@ select {
   color: var(--text);
   border: 1px solid var(--border);
   font-family: var(--font-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(229, 57, 53, .12);
 }
 
 .card,
