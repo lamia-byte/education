@@ -1,7 +1,6 @@
 /* 
    AUTH.CSS
-   Version professionnelle — compatible avec main.css
-   PARTIE 1
+ 
 */
 
 /* 
@@ -587,7 +586,6 @@ input:-webkit-autofill {
     cursor: pointer;
 }
 
-/* petite flèche custom pour le select */
 
 .input-group:has(select) .input-control::after {
     content: "";
@@ -612,29 +610,6 @@ input:-webkit-autofill {
 
 ::placeholder {
     color: var(--text-medium);
-}
-
-/* 
-   DARK MODE
-*/
-
-body.dark-mode .auth-card {
-    background: var(--bg-card);
-    border-color: var(--border-color);
-}
-
-body.dark-mode .input-control input,
-body.dark-mode .input-control select {
-    background: var(--bg-card);
-    color: var(--text-dark);
-}
-
-body.dark-mode .password-toggle:hover {
-    background: var(--border-light);
-}
-
-body.dark-mode .auth-submit:hover {
-    background: var(--primary-light);
 }
 
 /* 

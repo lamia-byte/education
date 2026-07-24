@@ -105,8 +105,7 @@ HERO TITLE
 
 /*
 COURSE SEARCH
-(kept in case the search box comes back to the hero — it isn't in the
-current HTML anymore, so this block is unused for now)
+
 */
 
 .course-search {
@@ -181,8 +180,7 @@ COURSE FILTER
     width: 100%;
     max-width: 900px;
 
-    /* sits right under the section title now, not in the hero anymore,
-       so no top margin needed here */
+   
     margin: 0 auto 45px;
 }
 
@@ -210,16 +208,16 @@ COURSE FILTER
     list-style: none;
 }
 
-/* filter buttons (were unclickable-by-keyboard <li>, replaced with real <button>) */
+/* filter buttons  */
 .filter-chip {
     display: block;
 
     padding: 12px 25px;
 
-    border: none;
-    border-radius: 12px;
+  
+    border-radius: 50px;
 
-    background: var(--gray-soft);
+    border:1px solid var(--gray-soft);
     color: var(--text);
 
     font-family: inherit;
@@ -255,8 +253,7 @@ COURSE FILTER
 }
 
 /* message shown when no course matches the active filter / search
-   (sits on the light .courses-section background now, so this needs
-   to be dark text, not white) */
+    */
 .no-courses {
     display: none;
     margin-top: 30px;
@@ -1053,12 +1050,12 @@ NEWSLETTER
 
 .newsletter-form button:hover {
     transform: translateY(-4px);
-    background: var(--primary-dark);
+    background: var(--secondary);
     color: var(--white);
     box-shadow: var(--shadow-md);
 }
 
-/* confirmation message after submit, hidden by default (see cours.js) */
+/* confirmation message after submit, hidden by default */
 .newsletter-success {
     display: none;
     margin-top: 12px;

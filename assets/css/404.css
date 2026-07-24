@@ -1,7 +1,3 @@
-/*
-  RESET / BASE
-  (ces pages de statut n'utilisent pas main.css, elles sont autonomes)
-*/
 
 * {
   margin: 0;
@@ -21,79 +17,57 @@ a {
 
 :root {
 
-  /* =====================
-     PRIMARY COLORS
-  ====================== */
+  
 
   --primary: #10244B;
   --primary-light: #1D3D73;
   --primary-dark: #0A1733;
   --secondary: #E53935;
 
-  /* =====================
-     BLACK COLORS
-  ====================== */
+  
 
   --black: #10244B;
   --black-soft: #1F1F1F;
   --black-light: #2B2B2B;
 
-  /* =====================
-     GREY COLORS
-  ====================== */
+ 
 
   --gray-dark: #4B4B4B;
   --gray: #777777;
   --gray-light: #BDBDBD;
   --gray-soft: #E5E5E5;
 
-  /* =====================
-     WHITE COLORS
-  ====================== */
+  
 
   --white: #FFFFFF;
   --white-soft: #FAFAFA;
   --off-white: #F7F7F7;
 
-  /* =====================
-     TEXT
-  ====================== */
+  
 
   --text: #111111;
   --text-light: #666666;
 
-  /* =====================
-     BACKGROUND
-  ====================== */
+  
 
   --bg: #FFFFFF;
   --bg-section: #F7F7F7;
 
-  /* =====================
-     BORDER
-  ====================== */
+  
 
   --border: #E5E5E5;
 
-  /* =====================
-     SHADOW
-  ====================== */
+  
 
   --shadow-sm: 0 5px 15px rgba(0, 0, 0, .08);
   --shadow-md: 0 15px 35px rgba(0, 0, 0, .12);
   --shadow-lg: 0 25px 60px rgba(0, 0, 0, .18);
 
-  /* =====================
-     OTHER
-  ====================== */
-
+  
   --radius: 20px;
   --transition: .35s ease;
 }
 
-/* ==========================================================
-   404 PAGE
-========================================================== */
 
 .page {
   position: relative;
@@ -217,11 +191,6 @@ flex-direction: column;
   }
 }
 
-/* ==========================================================
-   STATUS PAGES (maintenance.html, coming-soon.html)
-   Fond blanc partout : le bleu de la marque ne sert qu'en
-   accent (icones, boutons), jamais en fond de page.
-========================================================== */
 
 .status-page {
   position: relative;
@@ -238,8 +207,6 @@ flex-direction: column;
   background: var(--white);
 }
 
-/* legere grille en filigrane, neutre (pas de couleur), juste pour
-   eviter un fond totalement plat */
 .status-page::before {
   content: "";
   position: absolute;
@@ -292,7 +259,7 @@ flex-direction: column;
   font-size: 18px;
 }
 
-/* ----- Icone maintenance (engrenage anime en JS) ----- */
+/* ----- Icone maintenance  ----- */
 
 .maintenance-icon {
   width: 100px;
@@ -335,7 +302,7 @@ flex-direction: column;
   line-height: 1.8;
 }
 
-/* ----- Barre de progression (maintenance) ----- */
+/* ----- Barre de progression  */
 
 .status-progress-wrap {
   margin-bottom: 45px;
@@ -370,8 +337,7 @@ flex-direction: column;
 
 .status-progress-fill {
   height: 100%;
-  /* correspond au 68% affiche dans le label ; si ce chiffre change,
-     penser a mettre a jour cette valeur aussi (ou la piloter en JS) */
+  
   width: 68%;
 
   border-radius: 50px;

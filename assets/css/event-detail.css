@@ -4,10 +4,11 @@ EVENT DETAIL PAGE
 
 /*
 PAGE HEADER
+(always navy, in both light and dark mode)
 */
 
 .page-header{
-    
+
     position:relative;
     overflow:hidden;
 
@@ -15,9 +16,7 @@ PAGE HEADER
 
     text-align:center;
 
-    background:linear-gradient(135deg,
-    var(--primary),
-    var(--primary-dark));
+    background:linear-gradient(135deg, #10244B, #0A1733);
 
 }
 
@@ -66,7 +65,7 @@ PAGE HEADER
     font-size:38px;
     font-weight:800;
 
-    color:var(--white);
+    color:#fff;
 
     margin-bottom:16px;
 
@@ -97,7 +96,7 @@ PAGE HEADER
 
 .breadcrumb a:hover{
 
-    color:var(--white);
+    color:#fff;
 
 }
 
@@ -109,12 +108,15 @@ PAGE HEADER
 
 .breadcrumb .current{
 
-    color:var(--white);
+    color:#fff;
     font-weight:600;
 
 }
 
-.theme-toggle{
+/* dead code today (no matching element in the HTML), renamed so it can
+   never collide with the real dark-mode toggle button in main.css */
+
+.page-theme-toggle{
 
     position:absolute;
 
@@ -132,7 +134,7 @@ PAGE HEADER
 
     background:rgba(255,255,255,.12);
 
-    color:var(--white);
+    color:#fff;
 
     cursor:pointer;
 
@@ -144,7 +146,7 @@ PAGE HEADER
 
 }
 
-.theme-toggle:hover{
+.page-theme-toggle:hover{
 
     background:rgba(255,255,255,.22);
 
@@ -214,9 +216,9 @@ EVENT BANNER
 
     border-radius:50px;
 
-    background:var(--accent-red);
+    background:var(--secondary);
 
-    color:var(--white);
+    color:#fff;
 
     font-size:13px;
     font-weight:700;
@@ -227,7 +229,7 @@ EVENT BANNER
 
 .event-banner-overlay h2{
 
-    color:var(--white);
+    color:#fff;
 
     font-size:34px;
     font-weight:800;
@@ -260,7 +262,7 @@ EVENT BANNER
 
 .event-meta i{
 
-    color:var(--accent-red-light);
+    color:var(--secondary-light);
 
 }
 
@@ -302,15 +304,30 @@ SIDEBAR — LECTURER CARD
 
 .lecturer-card{
 
-   
-  
+    background:var(--white);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-sm);
+
     overflow:hidden;
 
-   
+    transition:var(--transition);
+
+}
+
+.lecturer-card:hover{
+
+    box-shadow:var(--shadow-md);
+
 }
 
 .lecturer-photo{
+
     border-radius: var(--radius);
+
     position:relative;
 
     height:260px;
@@ -446,7 +463,7 @@ SIDEBAR — LECTURER CARD
 
 .lecturer-contact a:hover{
 
-    color:var(--accent-red);
+    color:var(--secondary);
 
 }
 
@@ -463,6 +480,7 @@ SIDEBAR — LECTURER CARD
 
 /*
 SIDEBAR CTA
+(always navy, same fixed-brand pattern as the page header)
 */
 
 .sidebar-cta{
@@ -471,9 +489,7 @@ SIDEBAR CTA
 
     padding:32px 26px;
 
-    background:linear-gradient(135deg,
-    var(--primary),
-    var(--primary-dark));
+    background:linear-gradient(135deg, #10244B, #0A1733);
 
     border-radius:var(--radius);
 
@@ -496,7 +512,7 @@ SIDEBAR CTA
 
     background:rgba(255,255,255,.12);
 
-    color:var(--white);
+    color:#fff;
 
     font-size:22px;
 
@@ -504,7 +520,7 @@ SIDEBAR CTA
 
 .sidebar-cta h4{
 
-    color:var(--white);
+    color:#fff;
 
     font-size:17px;
 
@@ -527,15 +543,16 @@ SIDEBAR CTA
 
     display:inline-flex;
     align-items:center;
+    justify-content:center;
     gap:10px;
 
     padding:13px 24px;
 
     border-radius:10px;
 
-    background:var(--accent-red);
+    background:var(--secondary);
 
-    color:var(--white);
+    color:#fff;
 
     font-size:13px;
     font-weight:700;
@@ -548,7 +565,7 @@ SIDEBAR CTA
 
 .download-btn:hover{
 
-    background:var(--accent-red-light);
+    background:var(--secondary-light);
 
     transform:translateY(-3px);
 
@@ -563,10 +580,16 @@ MAIN ARTICLE (RIGHT)
 
 .event-main{
 
-    
+    background:var(--white);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-sm);
+
     padding:45px 45px 50px;
 
-   
 }
 
 .event-main>h2{
@@ -688,7 +711,7 @@ INLINE LINK
 
 .inline-link{
 
-    color:var(--accent-red);
+    color:var(--secondary);
 
     font-weight:700;
 
@@ -812,8 +835,13 @@ OTHER EVENTS
 .event-date.highlight{
 
     background:linear-gradient(135deg,
-    var(--accent-red),
-    var(--accent-red-dark));
+    var(--secondary),
+    var(--secondary-dark));
+
+    /* secondary red never inverts in dark mode, so the text next to it
+       must stay fixed white too, instead of inheriting the flipping
+       var(--white) from .event-date above */
+    color:#fff;
 
 }
 
@@ -882,7 +910,7 @@ OTHER EVENTS
     align-items:center;
     gap:8px;
 
-    color:var(--accent-red);
+    color:var(--secondary);
 
     font-size:13px;
     font-weight:600;
@@ -900,6 +928,7 @@ OTHER EVENTS
 
 /*
 NEWSLETTER
+(always navy, same fixed-brand pattern)
 */
 
 .newsletter{
@@ -916,9 +945,7 @@ NEWSLETTER
 
     border-radius:30px;
 
-    background:linear-gradient(135deg,
-    var(--primary),
-    var(--primary-dark));
+    background:linear-gradient(135deg, #10244B, #0A1733);
 
     box-shadow:var(--shadow-lg);
 
@@ -940,7 +967,7 @@ NEWSLETTER
 
 .left h2{
 
-    color:var(--white);
+    color:#fff;
 
     font-size:34px;
     font-weight:800;
@@ -1037,11 +1064,43 @@ NEWSLETTER
 
     transform:translateY(-4px);
 
-    background:var(--accent-red);
+    background:var(--secondary);
 
-    color:var(--white);
+    color:#fff;
 
     box-shadow:var(--shadow-md);
+
+}
+
+.newsletter-form button.sent{
+
+    background:var(--success);
+
+    color:#fff;
+
+}
+
+
+/*
+SCROLL-REVEAL ANIMATIONS
+(classes added dynamically by event-detail.js via IntersectionObserver)
+*/
+
+.fade-in-up{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:opacity .7s ease, transform .7s ease;
+
+}
+
+.fade-in-up.in-view{
+
+    opacity:1;
+
+    transform:translateY(0);
 
 }
 
@@ -1223,6 +1282,177 @@ RESPONSIVE
 .left h2{
 
     font-size:26px;
+
+}
+
+}
+
+/* SMALL MOBILE — extra pass, the site had nothing below 768px before */
+
+@media(max-width:480px){
+
+.page-header{
+
+    padding:75px 16px 35px;
+
+}
+
+.page-header h1{
+
+    font-size:24px;
+
+}
+
+.breadcrumb{
+
+    font-size:11px;
+    gap:6px;
+
+}
+
+.event-banner{
+
+    margin:-15px 15px 0;
+
+    border-radius:16px;
+
+}
+
+.event-banner img{
+
+    height:200px;
+
+}
+
+.event-banner-overlay{
+
+    padding:18px;
+
+}
+
+.event-tag{
+
+    font-size:11px;
+    padding:7px 14px;
+
+}
+
+.event-banner-overlay h2{
+
+    font-size:19px;
+
+    margin-bottom:12px;
+
+}
+
+.event-meta{
+
+    gap:12px;
+
+}
+
+.event-meta span{
+
+    font-size:12px;
+
+}
+
+.event-body{
+
+    padding:40px 16px;
+
+    gap:20px;
+
+}
+
+.lecturer-photo{
+
+    height:210px;
+
+}
+
+.lecturer-body{
+
+    padding:22px 20px 26px;
+
+}
+
+.lecturer-body h3{
+
+    font-size:18px;
+
+}
+
+.lecturer-contact a{
+
+    font-size:13px;
+
+}
+
+.sidebar-cta{
+
+    padding:26px 20px;
+
+}
+
+.download-btn{
+
+    width:100%;
+
+}
+
+.event-main{
+
+    padding:24px 18px 28px;
+
+}
+
+.event-main>h2{
+
+    font-size:22px;
+
+}
+
+.event-main h3{
+
+    font-size:17px;
+
+}
+
+.event-details-list{
+
+    padding:18px;
+    gap:12px;
+
+}
+
+.section-title h2{
+
+    font-size:24px;
+
+}
+
+.event-item{
+
+    padding:20px 18px;
+
+}
+
+.newsletter{
+
+    padding:32px 18px;
+
+}
+
+.newsletter-form{
+
+    flex-direction:column;
+
+}
+
+.newsletter-form button{
+
+    width:100%;
 
 }
 

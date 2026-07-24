@@ -1,11 +1,6 @@
-
-
-
-
-
 .container{
 
-    max-width:1280px;
+
 
     margin:auto;
 
@@ -14,10 +9,11 @@
 }
 
 
-/*PAGE HEADER*/
+/*PAGE HEADER
+(always navy, in both light and dark mode)*/
 
 .page-header{
-   
+
     position:relative;
     overflow:hidden;
 
@@ -25,9 +21,7 @@
 
     text-align:center;
 
-    background:linear-gradient(135deg,
-    var(--primary),
-    var(--primary-dark));
+    background:linear-gradient(135deg, #10244B, #0A1733);
 
 }
 
@@ -89,7 +83,7 @@
 
     background:rgba(255,255,255,.12);
 
-    color:var(--white);
+    color:#fff;
 
     font-size:13px;
     font-weight:700;
@@ -103,7 +97,7 @@
     font-size:44px;
     font-weight:800;
 
-    color:var(--white);
+    color:#fff;
 
     margin-bottom:18px;
 
@@ -142,7 +136,7 @@
 
 .breadcrumb a:hover{
 
-    color:var(--white);
+    color:#fff;
 
 }
 
@@ -154,7 +148,7 @@
 
 .breadcrumb span:last-child{
 
-    color:var(--white);
+    color:#fff;
     font-weight:600;
 
 }
@@ -184,8 +178,6 @@
 
     font-size:32px;
     font-weight:800;
-
-    color:var(--black-soft, var(--primary));
 
     color:var(--primary);
 
@@ -327,9 +319,9 @@ FEATURED EVENT
 
     border-radius:50px;
 
-    background:var(--accent-red);
+    background:var(--secondary);
 
-    color:var(--white);
+    color:#fff;
 
     font-size:12px;
     font-weight:700;
@@ -426,7 +418,7 @@ FEATURED EVENT
 
 .btn-primary:hover{
 
-    background:var(--accent-red);
+    background:var(--secondary);
 
     transform:translateY(-4px);
 
@@ -499,7 +491,7 @@ ALL EVENTS
 
     padding:80px 0;
 
-    background:var(--bg-section);
+    background:var(--white);
 
 }
 
@@ -580,10 +572,11 @@ ALL EVENTS
     border-radius:12px;
 
     background:linear-gradient(135deg,
-    var(--accent-red),
-    var(--accent-red-dark));
+    var(--secondary),
+    var(--secondary-dark));
 
-    color:var(--white);
+   
+    color:#fff;
 
     box-shadow:var(--shadow-md);
 
@@ -728,7 +721,7 @@ ALL EVENTS
 
 .event-btn:hover{
 
-    background:var(--accent-red);
+    background:var(--secondary);
 
     transform:translateY(-3px);
 
@@ -753,15 +746,14 @@ ALL EVENTS
 
 /*
 EVENT STATISTICS
+(always navy, same fixed-brand pattern)
 */
 
 .event-stats{
 
     padding:80px 0;
 
-    background:linear-gradient(135deg,
-    var(--primary),
-    var(--primary-dark));
+    background:linear-gradient(135deg, #10244B, #0A1733);
 
 }
 
@@ -802,7 +794,7 @@ EVENT STATISTICS
     font-size:36px;
     font-weight:800;
 
-    color:var(--white);
+    color:#fff;
 
     margin-bottom:8px;
 
@@ -965,7 +957,7 @@ UPCOMING PROGRAMS
 
 .program-link:hover{
 
-    color:var(--accent-red);
+    color:var(--secondary);
 
     gap:12px;
 
@@ -974,6 +966,7 @@ UPCOMING PROGRAMS
 
 /*
 EVENT CTA
+(always navy, same fixed-brand pattern)
 */
 
 .event-cta{
@@ -984,9 +977,7 @@ EVENT CTA
 
     border-radius:30px;
 
-    background:linear-gradient(135deg,
-    var(--accent-red),
-    var(--accent-red-dark));
+    background:linear-gradient(135deg, #10244B, #0A1733);
 
     text-align:center;
 
@@ -1007,7 +998,7 @@ EVENT CTA
 
     border-radius:50%;
 
-    background:rgba(16,36,75,.18);
+    background:rgba(255,255,255,.08);
 
     top:-90px;
     right:-60px;
@@ -1030,7 +1021,7 @@ EVENT CTA
     font-size:32px;
     font-weight:800;
 
-    color:var(--white);
+    color:#fff;
 
     margin-bottom:14px;
 
@@ -1054,9 +1045,9 @@ EVENT CTA
     align-items:center;
     gap:10px;
 
-    background:var(--white);
+    background:#fff;
 
-    color:var(--accent-red);
+    color:var(--secondary);
 
     padding:16px 34px;
 
@@ -1073,13 +1064,37 @@ EVENT CTA
 
 .cta-btn:hover{
 
-    background:var(--primary);
+    background:var(--secondary);
 
-    color:var(--white);
+    color:#fff;
 
     transform:translateY(-4px);
 
     box-shadow:var(--shadow-lg);
+
+}
+
+
+/*
+SCROLL-REVEAL ANIMATIONS
+(classes added dynamically by event.js via IntersectionObserver)
+*/
+
+.fade-in-up{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:opacity .7s ease, transform .7s ease;
+
+}
+
+.fade-in-up.in-view{
+
+    opacity:1;
+
+    transform:translateY(0);
 
 }
 
@@ -1214,22 +1229,72 @@ RESPONSIVE
 
 @media(max-width:480px){
 
+.page-header{
+
+    padding:85px 0 55px;
+
+}
+
 .page-header h1{
 
     font-size:26px;
 
 }
 
-.section-title h2,
+.page-header p{
+
+    font-size:14px;
+
+}
+
+
 .filter-top h2{
 
     font-size:26px;
 
 }
 
+.filter-controls button{
+
+    padding:9px 16px;
+
+    font-size:12.5px;
+
+}
+
+.featured-grid{
+
+    padding:20px;
+
+    gap:24px;
+
+}
+
+.featured-content h2{
+
+    font-size:24px;
+
+}
+
 .stats-grid{
 
     grid-template-columns:1fr;
+
+}
+
+.event-cta{
+
+    margin:0 15px 55px;
+
+    padding:40px 20px;
+
+}
+
+.cta-btn{
+
+    width:100%;
+
+    justify-content:center;
 
 }
 

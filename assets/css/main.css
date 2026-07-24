@@ -93,16 +93,6 @@
   --z-fixed: 1000;
   --z-modal: 2000;
 
-  --bg-body: var(--bg);
-  --bg-card: var(--white);
-  --bg-sidebar: var(--primary);
-  --bg-navbar: var(--white);
-  --bg-footer: var(--primary-dark);
-
-  --text-dark: var(--text);
-  --text-medium: var(--text-light);
-
-  --border-color: var(--border);
 }
 
 /* DARK MODE */
@@ -134,8 +124,7 @@ body.dark-mode {
   --border: #333333;
   --border-light: #2A2A2A;
 
-  background: var(--bg);
-  color: var(--text);
+ 
 }
 
 body.dark-mode h1,
@@ -174,8 +163,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background .35s ease, color .35s ease;
-  /* the header is position:fixed, so we offset the content
-     so it doesn't sit underneath it */
+ 
   padding-top: calc(var(--topbar-height) + var(--navbar-height));
 }
 
@@ -212,7 +200,7 @@ button {
   color: #fff;
 }
 
-/* custom scrollbar (webkit browsers) */
+/* custom scrollbar  */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -360,7 +348,7 @@ header {
   width: 100%;
 }
 
-/* active link : added via JS classList (highlightActiveNavLink) */
+/* active link */
 .nav-links a.active-link {
   color: var(--secondary);
   border-bottom: 2px solid var(--secondary);
@@ -425,8 +413,7 @@ header {
 }
 
 @media (max-width: 992px) {
-  /* no hover on touch : the submenu is driven by click in JS
-     (.active class set on .dropdown, see initDropdown) */
+  
   .dropdown-menu {
     position: static;
     opacity: 1;
@@ -829,7 +816,7 @@ header {
   }
 }
 
-/* FORMS / CARDS - dark mode fine-tuning */
+/* FORMS / CARDS - dark mode  */
 
 input,
 textarea,

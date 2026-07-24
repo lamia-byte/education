@@ -4,9 +4,7 @@ BLOG PAGE
 
 /*
 BLOG HERO
-(bandeau toujours en bleu marine, peu importe le theme clair/sombre :
- on utilise des couleurs fixes ici, pas les variables qui s'inversent
- en dark mode)
+
 */
 
 .blog-hero {
@@ -109,7 +107,7 @@ TITLE
 }
 
 /*
-SEARCH (sur le fond bleu marine du hero, toujours fixe)
+SEARCH 
 */
 
 .search-box {
@@ -164,7 +162,7 @@ SECTION LABEL ("Top Articles")
 }
 
 /*
-TOP ARTICLES FILTER (ul.blog-filter > li > a)
+TOP ARTICLES FILTER 
 */
 
 .blog-filter {

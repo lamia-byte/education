@@ -942,11 +942,11 @@ SIDEBAR
 
 .sidebar-enroll:hover{
 
-    background:var(--primary-light);
+    background:var(--secondary);
 
     transform:translateY(-3px);
 
-    box-shadow:var(--shadow-md);
+   
 
 }
 
@@ -982,9 +982,10 @@ SIDEBAR
 
 .sidebar-wishlist:hover{
 
-    border-color:var(--primary);
+    border-color:var(--secondary);
+    background: var(--secondary);
 
-    color:var(--primary);
+    color:var(--white);
 
 }
 
@@ -1138,7 +1139,7 @@ RELATED COURSES
 
 
 /*
-COURSE CARD (shared component)
+COURSE CARD 
 */
 
 .course-card{
@@ -1388,11 +1389,11 @@ COURSE CARD (shared component)
 
 .course-content button:hover{
 
-    background:var(--primary-light);
+    background:var(--secondary);
 
     transform:translateY(-3px);
 
-    box-shadow:var(--shadow-md);
+   
 
 }
 
@@ -1536,11 +1537,11 @@ NEWSLETTER
 
     transform:translateY(-4px);
 
-    background:var(--primary-dark);
+    background:var(--secondary);
 
     color:var(--white);
 
-    box-shadow:var(--shadow-md);
+   
 
 }
 

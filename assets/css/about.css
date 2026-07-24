@@ -336,7 +336,7 @@ KEY NUMBERS
 
 
 /*
-SECTION INTRO (SHARED)
+SECTION INTRO 
 */
 
 .section-intro{
@@ -881,11 +881,6 @@ TEAM
 
 }
 
-
-/*
-BACK TO TOP
-(button injected dynamically by propos.js)
-*/
 
 .back-to-top{
 

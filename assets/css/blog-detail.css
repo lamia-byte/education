@@ -3,11 +3,7 @@ BLOG DETAILS PAGE
 */
 
 
-/*
-READING PROGRESS BAR
-(offset aligned with the fixed header height defined in main.css,
- otherwise the bar hides behind the header)
-*/
+
 
 .reading-progress{
 
@@ -59,10 +55,6 @@ READING PROGRESS BAR
 }
 
 
-/*
-ARTICLE HERO
-(always navy, in both light and dark mode — same pattern as the blog hero)
-*/
 
 .article-hero{
 
@@ -121,8 +113,6 @@ ARTICLE HERO
 
 }
 
-/* dead code today (no matching element in the HTML), renamed so it can
-   never collide with the real dark-mode toggle button in main.css */
 
 .article-theme-toggle{
 
@@ -1549,7 +1539,7 @@ RELATED ARTICLES
 
 /*
 SCROLL-REVEAL ANIMATIONS
-(classes are added dynamically by blog-detail.js via IntersectionObserver)
+
 */
 
 .fade-in-up{

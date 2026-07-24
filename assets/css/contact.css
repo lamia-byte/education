@@ -1,6 +1,4 @@
 
-
-
 /*PAGE HEADER*/
 
 .page-header{
@@ -134,9 +132,9 @@ CONTACT SECTION LAYOUT
     display:grid;
     grid-template-columns:1fr 1.3fr;
 
-    gap:40px;
+    gap:50px;
 
-    align-items:stretch;
+    align-items:center;
 
     padding:100px 8%;
 
@@ -146,27 +144,20 @@ CONTACT SECTION LAYOUT
 /*
 CONTACT INFO PANEL
 */
-
 .info-contact{
+    position: relative;
+    overflow: hidden;
 
-    position:relative;
-    overflow:hidden;
+    background: linear-gradient(135deg,#10244B,#0A1733);
 
-   
+    padding: 45px 38px;
 
-    background:linear-gradient(135deg,
-    var(--primary),
-    var(--primary-dark));
+    border-radius: var(--radius);
 
-    padding:50px 44px;
+  
 
-    border-radius:var(--radius);
-
-    box-shadow:var(--shadow-lg);
-
-    display:flex;
-    flex-direction:column;
-
+    height: fit-content;   
+    align-self: center;   
 }
 
 .info-contact h2{
@@ -195,27 +186,22 @@ CONTACT INFO PANEL
     font-size:14px;
     line-height:1.8;
 
-    margin-bottom:38px;
-
-    padding-bottom:30px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
 
     border-bottom:1px solid rgba(255,255,255,.12);
 
 }
-
 .info{
+    position: relative;
+    z-index: 2;
 
-   
-    z-index:2;
+    display: flex;
+    flex-direction: column;
 
-    flex:1;
-   
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+    gap: 24px;
 
-    gap:8px;
-
+    margin-top: 25px;
 }
 
 .info-item{
@@ -321,7 +307,7 @@ CONTACT FORM
 .contact{
 
    
-
+ 
     display:flex;
     flex-direction:column;
 
@@ -329,7 +315,8 @@ CONTACT FORM
     padding:50px 44px;
 
    
-    transition:var(--transition);
+   
+    background:transparent;
 
 }
 
@@ -359,24 +346,20 @@ CONTACT FORM
     border-bottom:1px solid var(--border);
 
 }
-
 .contact-form{
-
-    flex:1;
 
     display:flex;
     flex-direction:column;
 
-    gap:18px;
+    gap:12px;
 
 }
-
 .form-row{
 
     display:grid;
     grid-template-columns:1fr 1fr;
 
-    gap:20px;
+    gap:12px;
 
 }
 
@@ -389,20 +372,25 @@ CONTACT FORM
 .input-group input,
 .input-group textarea{
 
-    width:100%;
+   
 
     background:var(--bg-section);
 
     border:1px solid var(--border);
 
-    border-radius:13px;
+   
 
-    padding:16px 46px 16px 18px;
+    width:100%;
 
-    font-family:inherit;
+    padding:14px 44px 14px 16px;
+
+    border-radius:10px;
 
     font-size:14px;
 
+    font-family:inherit;
+
+   
     color:var(--text);
 
     outline:none;
@@ -460,10 +448,6 @@ CONTACT FORM
 
 }
 
-/* Fix: contact.js adds an ".error" class to
-   invalid fields on submit, but there was no
-   CSS for it — invalid fields looked identical
-   to valid ones. */
 
 .input-group.error input,
 .input-group.error textarea{
@@ -583,9 +567,9 @@ CONTACT FORM
 }
 
 
-/*======================================
-REVEAL ANIMATION (used by contact.js)
-======================================*/
+/*
+REVEAL ANIMATION 
+*/
 
 .reveal{
 
@@ -604,10 +588,10 @@ REVEAL ANIMATION (used by contact.js)
 }
 
 
-/*======================================
+/*
 BACK TO TOP
-(button injected dynamically by contact.js)
-======================================*/
+
+*/
 
 .back-to-top{
 
@@ -687,10 +671,11 @@ RESPONSIVE
 }
 
 @media(max-width:768px){
+  
 
 .page-header{
 
-    padding:100px 20px 70px;
+    padding:100px ;
 
 }
 
@@ -702,7 +687,7 @@ RESPONSIVE
 
 .contact-section{
 
-    padding:0 20px 80px;
+    padding:100px auto;
 
     gap:25px;
 
