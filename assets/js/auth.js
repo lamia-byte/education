@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const storageKey = "aokasUsers";
-    const activeUserKey = "aokasActiveUser";
+    const storageKey = "Users";
+    const activeUserKey = "ActiveUser";
 
     const getUsers = () => {
         try {
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const lastName = formData.get("lastName").trim();
             const email = formData.get("email").trim().toLowerCase();
             const phone = formData.get("phone").trim();
-            const language = formData.get("language");
+            const language = formData.get("formation");
             const password = formData.get("password");
             const confirmPassword = formData.get("confirmPassword");
             const terms = formData.get("terms");

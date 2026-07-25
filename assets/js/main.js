@@ -41,7 +41,7 @@ const headerHtml = `
             <li><a href="blog-detail.html">Blog Details</a></li>
             <li><a href="professeur-detail.html">Teacher Profile</a></li>
             <li><a href="event-detail.html">Event Page</a></li>
-              <li><a href="detail.cour.html">Cour Page</a></li>
+              <li><a href="detail-cour.html">Cour Page</a></li>
 
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="404.html">404 Page</a></li>
@@ -214,7 +214,7 @@ function initThemeToggle() {
     try {
       localStorage.setItem("theme", theme);
     } catch (err) {
-      // private browsing or storage blocked, don't break the site over it
+     
     }
   }
 

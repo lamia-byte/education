@@ -500,31 +500,40 @@ COURSE CARD
 }
 
 /* Button */
+.course-content button{
+         width:100%;
 
-.course-content .button a {
-    margin-top: auto;
+    border:none;
 
-    border: none;
+    background:var(--primary);
 
-    background: var(--primary);
-    color: var(--white);
+    color:var(--white);
 
-    padding: 14px;
-    border-radius: 12px;
+    padding:16px;
 
-    font-weight: 700;
-    font-size: 14px;
+    border-radius:12px;
 
-    text-align: center;
-    cursor: pointer;
+    
 
-    transition: var(--transition);
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    margin-bottom:12px ;
+
 }
+.course-content button a{
+font-weight:700;
+    font-size:15px;
+   
+     padding:16px 120px;
+    
 
-.course-content .button a:hover {
-    background: var(--primary-light);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
+}
+.course-content button:hover {
+    background:var(--secondary);
+
+    transform:translateY(-3px);
 }
 
 /*

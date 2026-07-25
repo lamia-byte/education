@@ -1,6 +1,6 @@
 
 
-/* scroll reveal, no JS needed */
+/* scroll reveal */
 
 .reveal{
     opacity:0;
@@ -1907,7 +1907,7 @@ section:not(.home-hero){
 
 .btn-primary{
     background:var(--white);
-    color:var(--secondary);
+    color:var(--primary);
 }
 
 .btn-primary:hover{
@@ -1916,15 +1916,13 @@ section:not(.home-hero){
 }
 
 .btn-secondary{
-    background:transparent;
+    background:var(--secondary);
     color:var(--white);
-    border:2px solid var(--primary-light);
+    border:2px solid var(--secondary);
 }
 
 .btn-secondary:hover{
-    background:var(--primary);
-    border-color:var(--primary);
-    transform:translateY(-4px);
+  transform:translateY(-4px);
     box-shadow:var(--shadow-lg);
 }
 

@@ -4,16 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 
-    /* ======================================
+    /* 
        HEADER STICKY
-       ------------------------------------
-       Fix: the header is injected into #header
-       asynchronously by main.js, so .navbar may
-       not exist yet at DOMContentLoaded. Querying
-       it fresh on every scroll means the sticky
-       effect keeps working no matter when the
-       header finishes loading.
-    ====================================== */
+    
+     */
 
     window.addEventListener("scroll", () => {
 
@@ -26,23 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
 
 
-    /* ======================================
+    /* 
        SCROLL-IN ANIMATION
-       ------------------------------------
-       Fix: the previous script watched
-       ".contact-info, .map-frame, .faq-box" —
-       none of which exist on this page (the info
-       panel is actually ".info-contact", and
-       there's no map or FAQ section here). It also
-       toggled ".show"/".hidden", which have no
-       matching CSS. There was also a second,
-       separate reveal script at the bottom of the
-       file doing the same job differently — that
-       duplicate has been removed. This is now the
-       one reveal system, using the site's actual
-       ".reveal" / ".active" convention and the
-       real class names on this page.
-    ====================================== */
+     
+     */
 
     const animatedElements = document.querySelectorAll(
         ".page-header-content, .info-contact, .contact"
@@ -82,21 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ======================================
+    /* 
        CONTACT FORM
-       ------------------------------------
-       Fix: validation used to add an ".error"
-       class to <input>/<textarea> elements, but
-       the CSS targets ".input-group.error" (the
-       wrapper), so invalid fields never actually
-       looked different. Fix: success/error text
-       now toggles the ".success"/".error" classes
-       already defined in contact.css instead of
-       setting inline styles (which also hardcoded
-       colors that didn't match the site palette).
-       Fix: messages are in English, matching the
-       rest of the page.
-    ====================================== */
+      
+     */
 
     const form = document.getElementById("contactForm");
     const message = document.querySelector(".form-message");
@@ -168,45 +138,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-    /* ======================================
-       FOOTER SOCIAL LINKS HOVER
-       ------------------------------------
-       Fix: mouseenter/mouseleave don't bubble,
-       so attaching them directly to
-       ".social-links a" only worked if the footer
-       already existed at DOMContentLoaded. Since
-       the footer is injected asynchronously, this
-       used delegated "mouseover"/"mouseout"
-       listeners on document instead — these do
-       bubble, so they work regardless of when the
-       footer loads.
-    ====================================== */
-
-    document.addEventListener("mouseover", (e) => {
-
-        const link = e.target.closest(".social-links a");
-        if (link) link.style.transform = "scale(1.1)";
-
-    });
-
-    document.addEventListener("mouseout", (e) => {
-
-        const link = e.target.closest(".social-links a");
-        if (link) link.style.transform = "scale(1)";
-
-    });
-
-
-    /* ======================================
+    /* 
        BACK TO TOP BUTTON
-       ------------------------------------
-       Fix: renamed from ".scroll-top" (unstyled,
-       no matching CSS anywhere) to ".back-to-top"
-       to match the class already styled in
-       contact.css and used across the rest of the
-       site. Guarded against creating a duplicate
-       button if this script ever runs twice.
-    ====================================== */
+      
+     */
 
     let scrollBtn = document.querySelector(".back-to-top");
 

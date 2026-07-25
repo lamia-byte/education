@@ -1,11 +1,6 @@
 /*
   PROFESSEUR.JS
-  Behaviour specific to professeur.html and professeur-detail.html:
-  - back to top button that appears on scroll
-  - fade-in animation on scroll (.reveal -> .active)
-
-  Dark mode itself is handled sitewide by main.js (navbar button),
-  so this file does not touch it.
+ 
 */
 
 document.addEventListener("DOMContentLoaded", function () {

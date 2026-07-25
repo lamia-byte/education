@@ -21,9 +21,9 @@ cards.forEach(card=>{
 
 
 });
-/*======================================
+/*
 FAQ ACCORDION
-======================================*/
+*/
 
 const faqItems = document.querySelectorAll(".faq-item");
 

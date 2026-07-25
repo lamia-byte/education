@@ -304,13 +304,7 @@ SIDEBAR — LECTURER CARD
 
 .lecturer-card{
 
-    background:var(--white);
-
-    border:1px solid var(--border);
-
-    border-radius:var(--radius);
-
-    box-shadow:var(--shadow-sm);
+   
 
     overflow:hidden;
 
@@ -318,11 +312,6 @@ SIDEBAR — LECTURER CARD
 
 }
 
-.lecturer-card:hover{
-
-    box-shadow:var(--shadow-md);
-
-}
 
 .lecturer-photo{
 
@@ -580,14 +569,6 @@ MAIN ARTICLE (RIGHT)
 
 .event-main{
 
-    background:var(--white);
-
-    border:1px solid var(--border);
-
-    border-radius:var(--radius);
-
-    box-shadow:var(--shadow-sm);
-
     padding:45px 45px 50px;
 
 }
@@ -727,7 +708,7 @@ INLINE LINK
 
 
 /*
-OTHER EVENTS
+EVENTS
 */
 
 .other-events{
@@ -777,120 +758,221 @@ OTHER EVENTS
 
 .other-events-grid{
 
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:26px;
+     display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
 
 }
 
-.event-item{
-
-    display:flex;
-    flex-direction:column;
+.event-card{
 
     background:var(--white);
 
     border:1px solid var(--border);
 
-    border-radius:18px;
+    border-radius:20px;
 
-    padding:26px 22px;
+    overflow:hidden;
 
     box-shadow:var(--shadow-sm);
 
     transition:var(--transition);
 
+    display:flex;
+    flex-direction:column;
+
 }
 
-.event-item:hover{
+.event-card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-10px);
 
     box-shadow:var(--shadow-lg);
 
 }
 
+.event-image{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.event-image img{
+
+    width:100%;
+    height:190px;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.event-card:hover .event-image img{
+
+    transform:scale(1.08);
+
+}
+
 .event-date{
+
+    position:absolute;
+
+    top:16px;
+    left:16px;
 
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
 
-    width:64px;
-    height:64px;
+    width:54px;
+    height:54px;
 
-    border-radius:14px;
-
-    background:linear-gradient(135deg,
-    var(--primary),
-    var(--primary-light));
-
-    color:var(--white);
-
-    margin-bottom:18px;
-
-}
-
-.event-date.highlight{
+    border-radius:12px;
 
     background:linear-gradient(135deg,
     var(--secondary),
     var(--secondary-dark));
 
-    /* secondary red never inverts in dark mode, so the text next to it
-       must stay fixed white too, instead of inheriting the flipping
-       var(--white) from .event-date above */
+   
     color:#fff;
+
+    box-shadow:var(--shadow-md);
 
 }
 
-.event-date .day{
+.event-date strong{
 
-    font-size:22px;
+    font-size:18px;
     font-weight:800;
 
     line-height:1;
 
 }
 
-.event-date .month{
+.event-date small{
 
-    font-size:11px;
+    font-size:10px;
     font-weight:700;
-
-    text-transform:uppercase;
 
     letter-spacing:.5px;
 
 }
 
-.event-time{
+.event-content{
+
+    padding:20px 22px 24px;
 
     display:flex;
-    align-items:center;
-    gap:8px;
-
-    color:var(--text-light);
-
-    font-size:13px;
-
-    margin-bottom:10px;
+    flex-direction:column;
+    flex:1;
 
 }
 
-.event-item-body h3{
+.event-category{
+
+    display:inline-block;
+
+    align-self:flex-start;
+
+    background:var(--gray-soft);
+
+    color:var(--primary);
+
+    font-size:12px;
+    font-weight:700;
+
+    padding:6px 14px;
+
+    border-radius:40px;
+
+    margin-bottom:12px;
+
+}
+
+.event-content h3{
 
     font-size:17px;
     line-height:1.4;
 
-    margin-bottom:14px;
+    color:var(--text);
+
+    margin-bottom:10px;
+
+    transition:.3s;
 
 }
 
-.event-item-body h3 a{
+.event-card:hover .event-content h3{
 
-    color:var(--text);
+    color:var(--primary);
+
+}
+
+.event-content>p{
+
+    color:var(--text-light);
+
+    font-size:13px;
+    line-height:1.7;
+
+    margin-bottom:16px;
+
+}
+
+.event-info{
+
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    padding:14px 0;
+
+    border-top:1px solid var(--border);
+
+    margin-bottom:16px;
+
+    font-size:12px;
+
+    color:var(--text-light);
+
+}
+
+.event-info span{
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+}
+
+.event-info i{
+
+    color:var(--primary);
+
+}
+
+.event-btn{
+
+    margin-top:auto;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--primary);
+
+    color:var(--white);
+
+    padding:12px;
+
+    border-radius:10px;
+
+    font-weight:700;
+    font-size:13px;
 
     text-decoration:none;
 
@@ -898,30 +980,92 @@ OTHER EVENTS
 
 }
 
-.event-item-body h3 a:hover{
+.event-btn:hover{
 
-    color:var(--primary);
+    background:var(--secondary);
 
-}
+    transform:translateY(-3px);
 
-.event-speaker{
-
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-
-    color:var(--secondary);
-
-    font-size:13px;
-    font-weight:600;
-
-    text-decoration:none;
+    box-shadow:var(--shadow-md);
 
 }
 
-.event-speaker:hover{
+.no-results{
 
-    text-decoration:underline;
+    display:none;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+    margin-top:20px;
+
+}
+
+
+/*
+EVENT STATISTICS
+
+*/
+
+.event-stats{
+
+    padding:80px 0;
+
+    background:linear-gradient(135deg, #10244B, #0A1733);
+
+}
+
+.stats-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+
+}
+
+.event-stats .stat-box{
+
+    text-align:center;
+
+    padding:30px 15px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:18px;
+
+    transition:var(--transition);
+
+}
+
+.event-stats .stat-box:hover{
+
+    background:rgba(255,255,255,.1);
+
+    transform:translateY(-6px);
+
+}
+
+.event-stats .stat-box h3{
+
+    font-size:36px;
+    font-weight:800;
+
+    color:#fff;
+
+    margin-bottom:8px;
+
+}
+
+.event-stats .stat-box p{
+
+    color:rgba(255,255,255,.7);
+
+    font-size:14px;
 
 }
 

@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="assets/css/blog-detail.css">
 
     <script src="assets/js/main.js" defer></script>
+     <script src="assets/js/blog-detail.js" defer></script>
+    
 
 </head>
 
@@ -356,7 +358,7 @@
 
     <div class="related-grid">
 
-        <a href="blog-details.html" class="blog-card">
+        <a href="blog-detail.html" class="blog-card">
             <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=900" alt="Programming">
             <div class="blog-content">
                 <span class="category">Programming</span>
@@ -374,7 +376,7 @@
             </div>
         </a>
 
-        <a href="blog-details.html" class="blog-card">
+        <a href="blog-detail.html" class="blog-card">
             <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900" alt="Study tips">
             <div class="blog-content">
                 <span class="category">Study Tips</span>
@@ -392,7 +394,7 @@
             </div>
         </a>
 
-        <a href="blog-details.html" class="blog-card">
+        <a href="blog-detail.html" class="blog-card">
             <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900" alt="Education">
             <div class="blog-content">
                 <span class="category">Education</span>
@@ -418,55 +420,6 @@
 
 <div id="footer"></div>
 
-<script>
-
-   
-
-    /* Reading progress bar */
-    const progressBar = document.getElementById("readingProgress");
-    const article = document.querySelector(".article-content");
-
-    function updateProgress() {
-        const rect = article.getBoundingClientRect();
-        const total = article.offsetHeight - window.innerHeight;
-        const scrolled = Math.min(Math.max(-rect.top, 0), total);
-        const percent = total > 0 ? (scrolled / total) * 100 : 0;
-        progressBar.style.width = percent + "%";
-    }
-
-    window.addEventListener("scroll", updateProgress);
-    window.addEventListener("resize", updateProgress);
-    updateProgress();
-
-    /* Table of contents: smooth scroll + active link on scroll */
-    const tocLinks = document.querySelectorAll(".toc-list a");
-    const headings = Array.from(tocLinks).map(link =>
-        document.querySelector(link.getAttribute("href"))
-    ).filter(Boolean);
-
-    function updateTocActive() {
-        let currentId = "";
-        headings.forEach(h => {
-            if (h.getBoundingClientRect().top <= 140) {
-                currentId = h.id;
-            }
-        });
-        tocLinks.forEach(link => {
-            link.classList.toggle("active", link.getAttribute("href") === "#" + currentId);
-        });
-    }
-
-    window.addEventListener("scroll", updateTocActive);
-    updateTocActive();
-
-    /* Comment reply toggle (visual only) */
-    document.querySelectorAll(".reply-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            btn.classList.toggle("active");
-        });
-    });
-
-</script>
 
 </body>
 </html>

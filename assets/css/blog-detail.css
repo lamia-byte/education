@@ -1004,7 +1004,7 @@ COMMENT FORM
 
 .comment-form button:hover{
 
-    background:var(--primary-light);
+    background:var(--secondary);
 
     transform:translateY(-3px);
 
@@ -1236,7 +1236,7 @@ AUTHOR MINI BOX
 
 .sidebar-btn:hover{
 
-    background:var(--primary-light);
+    background:var(--secondary);
 
     transform:translateY(-3px);
 

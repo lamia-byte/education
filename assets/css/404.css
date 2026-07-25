@@ -27,10 +27,6 @@ a {
   
 
   --black: #10244B;
-  --black-soft: #1F1F1F;
-  --black-light: #2B2B2B;
-
- 
 
   --gray-dark: #4B4B4B;
   --gray: #777777;
@@ -59,12 +55,7 @@ a {
 
   
 
-  --shadow-sm: 0 5px 15px rgba(0, 0, 0, .08);
-  --shadow-md: 0 15px 35px rgba(0, 0, 0, .12);
-  --shadow-lg: 0 25px 60px rgba(0, 0, 0, .18);
-
-  
-  --radius: 20px;
+ 
   --transition: .35s ease;
 }
 
@@ -102,7 +93,7 @@ flex-direction: column;
   font-weight: 900;
   line-height: 1;
 
-
+  color:var(--gray-light);
 
   letter-spacing: 10px;
 }

@@ -3,17 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const prefersReducedMotion =
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    /* ======================================
+    /* 
        HEADER STICKY
-       ------------------------------------
-       The header is injected into #header
-       asynchronously by main.js, so .navbar may
-       not exist yet at DOMContentLoaded. Querying
-       it fresh on every scroll (instead of once,
-       up front) means the sticky effect keeps
-       working no matter when the header finishes
-       loading.
-    ====================================== */
+       
+     */
 
     window.addEventListener("scroll", () => {
 
@@ -26,16 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
 
 
-    /* ======================================
+    /* 
        SCROLL-IN ANIMATION
-       ------------------------------------
-       Site convention is ".reveal" (start state)
-       + ".active" (revealed state). A small
-       staggered delay is added for elements that
-       share a parent (mission cards, team cards,
-       key numbers, timeline items) for a nicer
-       cascading effect.
-    ====================================== */
+       
+     */
 
     const animatedGroups = [
         ".propos",
@@ -84,9 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ======================================
+    /* 
        ANIMATED COUNTERS
-    ====================================== */
+     */
 
     const counters = document.querySelectorAll(".chiffre-item h3");
 
@@ -141,16 +128,10 @@ document.addEventListener("DOMContentLoaded", () => {
     counters.forEach(counter => counterObserver.observe(counter));
 
 
-    /* ======================================
+    /* 
        TEAM CARD TILT EFFECT
-       ------------------------------------
-       Only enabled on devices that actually have
-       a mouse/hover (skips touch devices). The
-       transition is near-instant while the cursor
-       moves (so the tilt tracks the pointer
-       precisely) and only eased on mouseleave (so
-       the reset snaps back smoothly).
-    ====================================== */
+     
+     */
 
     const supportsHover = window.matchMedia("(hover: hover)").matches;
 
@@ -191,14 +172,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ======================================
+    /* 
        BACK TO TOP BUTTON
-       ------------------------------------
-       Class ".back-to-top" matches the styling
-       already defined in propos.css. Guarded
-       against creating a duplicate button if this
-       script ever runs twice.
-    ====================================== */
+     
+     */
 
     let scrollBtn = document.querySelector(".back-to-top");
 

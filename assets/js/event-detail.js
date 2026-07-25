@@ -16,8 +16,6 @@ function initScrollReveal() {
 
   elements.forEach((el) => el.classList.add("fade-in-up"));
 
-  // stagger the "other events" cards slightly so they don't all pop in
-  // at the exact same time
   document.querySelectorAll(".other-events-grid .event-item").forEach((el, index) => {
     el.style.transitionDelay = `${index * 0.08}s`;
   });
